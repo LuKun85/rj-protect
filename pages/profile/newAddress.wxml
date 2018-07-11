@@ -1,0 +1,197 @@
+<!--pages/profile/newAddress.wxml-->
+<import src="../../components/custom/addressTag.wxml" />
+
+<view class='addressPage'>
+  <view class='addressCell'>
+    <view class='border' />
+    <view class='addressCell'>
+      <view class='addressCell-item'>
+        <view class='addressCell-item-hd'>
+          <label>联系人:</label>
+        </view>
+        <view class='addressCell-item-bd'>
+          <input placeholder="" maxlength='20' value="{{contactName}}" bindinput='enterContactName'></input>
+        </view>
+      </view>
+    </view>
+    <view class='border' />
+  </view>
+
+
+  <view class='addressCell'>
+    <view class='addressCell'>
+      <view class='addressCell-item'>
+        <view class='addressCell-item-hd'>
+          <label>手机号:</label>
+        </view>
+        <view class='addressCell-item-bd'>
+          <input placeholder="" maxlength='20' type='number' value="{{contactPhone}}"bindinput='enterContactPhone'></input>
+        </view>
+      </view>
+    </view>
+    <view class='border' />
+  </view>
+
+  <view class='addressCell'>
+    <view class='addressCell'>
+      <view class='addressCell-item'>
+        <view class='addressCell-item-hd'>
+          <label>地区:</label>
+        </view>
+        <view class='addressCell-item-bd' bindtap='showSelectCity'>
+          <label>{{provinceName}}</label>
+          <label style='margin-left:0.5rem'>{{cityName}}</label>
+          <label style='margin-left:0.5rem'>{{areaName}}</label>
+          <label style='margin-left:0.5rem'>{{townName}}</label>
+        </view>
+      </view>
+    </view>
+    <view class='border' />
+  </view>
+
+  <view class='addressCell'>
+    <view class='addressCell'>
+      <view class='addressCell-item'>
+        <view class='addressCell-item-hd'>
+          <label>小区:</label>
+        </view>
+        <view class='addressCell-item-bd'>
+        <view class='addressCell-item-bd' bindtap='showHouseParkSelect'>
+          <label>{{houseparkName}}</label>
+          <label style='margin-left:0.5rem'>{{buildingName}}</label>
+          <label style='margin-left:0.5rem'>{{unitName}}</label>
+          <label style='margin-left:0.5rem'>{{doorName}}</label>
+        </view>
+        </view>
+      </view>
+    </view>
+    <view class='border' />
+  </view>
+
+  <view class='addressCell'>
+    <view class='addressCell'>
+      <view class='addressCell-item'>
+        <view class='addressCell-item-hd'>
+          <label>详细地址:</label>
+        </view>
+        <view class='addressCell-item-bd'>
+          <input placeholder="" maxlength='30' bindinput='enterAddressDetail' value="{{addressDetail}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class='border' />
+  </view>
+
+  <view class='addressCell'>
+    <view class='addressCell'>
+      <view class='addressCell-item'>
+        <view class='addressCell-item-hd'>
+          <label>地址备注:</label>
+        </view>
+        <view class='addressCell-item-bd'>
+          <input placeholder="" maxlength='30' bindinput='enterAddressRemark' value="{{addressRemark}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class='border' />
+  </view>
+
+  <!-- <view class='addressCell'>
+    <view class='addressCell'>
+      <view class='addressCell-item'>
+        <view class='addressCell-item-hd'>
+          <label>标签:</label>
+        </view>
+        <view class='addressCell-item-bd'>
+          <view class='tagBoxFamily' >
+            <view>
+              家
+            </view>
+          </view>
+          <view class='tagBoxCompany'>
+            <view>
+              公司
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='border' />
+  </view> -->
+
+
+  <view class='addressFoot-bottom'>
+    <button type='primary' disabled='{{saveButtonClicked}}' bindtap='{{buttonFunction}}' >
+      保存地址
+    </button>
+  </view>
+
+
+  <view class="foot_dialog_screen" bindtap="hideCitySelectDialog" wx:if="{{showCityDialogFlag}}">
+
+  </view>
+  <view animation="{{animationData}}" class="foot_dialog_screen_box" wx:if="{{showCityDialogFlag}}">
+
+    <view>
+      <view style='margin: 0.5rem 0 0.5rem 0'>
+        <label style='font-size:17px; margin:1rem'>
+        </label>
+        <label style='float:right; font-size:17px; margin-right:1rem;' bindtap='ensureAddressCodeSelect'>
+          确定
+        </label>
+      </view>
+    </view>
+    <view class='border'></view>
+    
+    <picker-view indicator-style="height: 40px;" style="margin-top:0.2rem; width: 100%; height: 200px;" value="{{value}}" bindchange="bindAddressCodeChange">
+
+      <picker-view-column>
+        <view wx:for="{{provinceList}}" wx:key="{{item.code}}" style="line-height: 50px">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{cityList}}" wx:key="{{item.code}}" style="line-height: 50px">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{areaList}}" wx:key="{{item.code}}" style="line-height: 50px">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{townList}}" wx:key="{{item.code}}" style="line-height: 50px">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+
+ <view class="foot_dialog_screen" bindtap="hideHouseParkSelectDialog" wx:if="{{showHouseParkDialogFlag}}">
+
+  </view>
+  <view animation="{{animationData}}" class="foot_dialog_screen_box" wx:if="{{showHouseParkDialogFlag}}">
+
+    <view>
+      <view style='margin: 0.5rem 0 0.5rem 0'>
+        <label style='font-size:17px; margin:1rem'>
+        </label>
+        <label style='float:right; font-size:17px; margin-right:1rem;' bindtap='ensureAddressCodeSelect'>
+          确定
+        </label>
+      </view>
+    </view>
+    <view class='border'></view>
+    
+    <picker-view indicator-style="height: 40px;" style="margin-top:0.2rem; width: 100%; height: 200px;" value="{{houseParkValue}}" bindchange="bindHouseparkCodeChange">
+
+      <picker-view-column>
+        <view wx:for="{{houseparkList}}" wx:key="{{item.code}}" style="line-height: 50px">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{buildingList}}" wx:key="{{item.code}}" style="line-height: 50px">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{unitList}}" wx:key="{{item.code}}" style="line-height: 50px">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{doorList}}" wx:key="{{item.code}}" style="line-height: 50px">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+</view>

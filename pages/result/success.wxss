@@ -1,0 +1,21 @@
+/* pages/result/success.wxss */
+
+.success {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.2rem;
+  border-radius: 50%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#28834C), to(#8ADCAA));
+  background-image: -webkit-linear-gradient(left, #28834C 0, #8ADCAA 100%);
+  background-image: linear-gradient(90deg, #28834C 0, #8ADCAA 100%);
+  box-shadow:5px 2px 6px #000;
+}
+
+
+.message {
+  color: white;
+  font-size: 20px;
+}

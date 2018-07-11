@@ -1,0 +1,26 @@
+<!--pages/profile/mypackage.wxml-->
+
+<import src="../../components/custom/mypackageItem.wxml" />
+
+
+
+<view>
+
+  <view class='my-package-board'>
+  	<view class='header'>
+    <label>
+        袋子记录
+    </label>
+    </view>
+    <ol>
+<!--       <li>
+        <template is="mypackageItem" data="{{item}}" />
+      </li> -->
+
+      <li wx:for="{{myPackageList}}" wx:for-item="item" wx:key="item.id">
+           <template is="mypackageItem" data="{{...item}}" />
+      </li>
+
+    </ol>
+  </view>
+</view>

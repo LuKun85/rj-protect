@@ -1,0 +1,122 @@
+/* pages/profile/newAddress.wxss */
+
+.addressPage {
+  margin: 0.2rem;
+}
+
+.border {
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  transform: scaleY(0.5);
+}
+
+.border_right {
+  display: inline-block;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-color: #e6e6e6;
+}
+
+.addressCell {
+  display: box;
+  margin: 0.2rem 0 0.2rem 0
+}
+
+.addressCell-item {
+  line-height: 2.5rem;
+  margin: 0.2rem 0 0.2rem 0;
+}
+
+.addressCell-item-hd {
+  display: inline-block;
+  width: 20%;
+}
+.addressCell-item-hd label{
+  margin-left: 0.2rem;
+  font-size: 14px;
+}
+
+.addressCell-item-bd {
+  display: inline-block;
+  width: 80%;
+}
+.addressCell-item-bd input {
+  overflow: visible;
+}
+
+
+.addressFoot-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #CCCCCC;
+}
+
+.addressFoot-bottom button {
+  width: 80%;
+  border-radius: 1.5rem;
+  font-size: 14px;
+ }
+
+ .foot_dialog_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.foot_dialog_screen_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+
+.tagBoxFamily{
+  display: inline-block;
+  border-style: solid;
+  font-size: 9px;
+  border-width: thin;
+  border-color: #0099FF;
+  margin-left: rem;
+  width: 1.6rem;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.tagBoxFamily :hover{
+  border-width: thick;
+  background-color: #0099FF;
+}
+
+
+
+.tagBoxCompany{
+  display: inline-block;
+  border-style: solid;
+  font-size: 9px;
+  border-width: thin;
+  border-color: #FFCC00;
+  margin-left: 1rem;
+  width: 1.6rem;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 20px;
+}
+.tagBoxCompany :hover{
+  border-width: thick;
+  background-color: #FFCC00;
+}

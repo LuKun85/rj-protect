@@ -1,0 +1,25 @@
+<!--用户登录选择界面-->
+<view>
+  <view style='display:block; width:100%;'>
+    <image class="loginPageTopImg" src='../../assets/images/lunbo/lunbo3.png'> </image>
+  </view>
+
+  <button class="weui-btn loginSwitchButton" type="primary" open-type='getUserInfo' bindgetuserinfo='wechatLogin'>
+    <image src='../../assets/images/wechat.png' class='loginButtonIcon'></image>
+    微信用户快捷登录
+  </button>
+ 
+  <view class='loginSwitchLink' bindtap='phoneLoginPage'>
+     输入手机号账号登录/注册
+  </view>
+
+    <view class='returnPrimaryPage' bindtap='returnPrimaryPage'>
+     <label>返回首页</label>
+  </view>
+
+  <view class="weui-footer">
+    <view class="weui-footer_fixed-bottom">
+      点击注册表示同意融久环保用户协议
+    </view>
+  </view>
+</view>

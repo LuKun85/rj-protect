@@ -1,0 +1,87 @@
+<template name="mainTabCell">
+  <!--顶部-->
+  <view class="top">
+
+    <!--头像-->
+    <image class="avator" src="{{item.profile_image}}" mode="aspectFit"></image>
+
+    <!--标题、时间-->
+    <view class="title-time">
+      <text class="title">{{item.name}}</text>
+      <text class="time">{{item.create_time}}</text>
+    </view>
+
+    <!-- 更多按钮
+    <image class="morebtnnormal" src="../../assets/images/scan.png" mode="center"></image> -->
+
+  </view>
+
+  <!--内容-->
+  <view class="content">
+
+    <text class="content-text">{{item.text}}</text>
+
+    <!--大图-->
+    <view class="content-multimedia" hidden="{{(item.image1 && (!item.videouri && !item.voiceuri))  ? false : true}}">
+      <image hidden="{{true}}" src="{{item.image1}}" mode="scaleToFill" style="width:{{item.width}}rpx;height:{{item.height}}rpx;"></image>
+    </view>
+
+    <!--视频-->
+    <view class="content-multimedia" hidden="{{item.videouri ? false : true}}">
+      <video id="{{item.id}}" src="{{item.videouri}}" bindplay="videoPlay" bindended="videoEndPlay" controls style="width:{{item.width}}rpx;height:{{item.height}}rpx;"></video>
+    </view>
+
+    <!--音频-->
+    <view class="content-multimedia" hidden="{{item.voiceuri ? false : true}}">
+      <audio id="{{item.id}}" src="{{item.voiceuri}}" poster="{{item.bimageuri}}" author="{{item.screen_name}}" bindplay="audioplay" bindended="audioEndPlay" controls></audio>
+    </view>
+
+  </view>
+
+  <view class="location"> 
+     <text>{{item.publishAddress.addressName}}</text>
+  </view>
+
+  <!--底部-->
+  <view class="bottom">
+
+    <!--赞-->
+    <view class="bottom-item" bindtap='clickLove' data-id="{{item.id}}">
+      <view class="bottom-item-content">
+        <image src="{{item.loveFlag == 'Y'? '../../assets/images/circle/love_s.png' : '../../assets/images/circle/love.png'}}" mode="scaleToFill"></image>
+        <text class="bottom-item-zan-text">{{item.loveTotal}}</text>
+      </view>
+      <!--分割线-->
+      <view class="cut-line"></view>
+    </view>
+
+    <!--踩-->
+    <view class="bottom-item" bindtap='clickHate' data-id="{{item.id}}">
+      <view class="bottom-item-content">
+        <image src="{{item.hateFlag == 'Y'? '../../assets/images/circle/hate_s.png' : '../../assets/images/circle/hate.png'}}" mode="scaleToFill"></image>
+        <text class="bottom-item-zan-text">{{item.hateTotal}}</text>
+      </view>
+      <!--分割线-->
+      <view class="cut-line"></view>
+    </view>
+
+    <!--转发-->
+    <view class="bottom-item">
+      <view class="bottom-item-content">
+        <image src="{{item.repostFlag == 'Y'? '../../assets/images/circle/repost_s.png' : '../../assets/images/circle/repost.png'}}" mode="scaleToFill"></image>
+        <text class="bottom-item-zan-text">{{item.repostTotal}}</text>
+      </view>
+      <!--分割线-->
+      <view class="cut-line"></view>
+    </view>
+
+    <!--评论-->
+    <view class="bottom-item">
+      <view class="bottom-item-content">
+        <image src="{{item.commentFlag == 'Y'? '../../assets/images/circle/comment_s.png' : '../../assets/images/circle/comment.png'}}" mode="scaleToFill"></image>
+        <text class="bottom-item-zan-text">{{item.commentCount}}</text>
+      </view>
+    </view>
+
+  </view>
+</template>

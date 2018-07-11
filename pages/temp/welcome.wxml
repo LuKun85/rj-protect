@@ -1,0 +1,28 @@
+<!--pages/temp/welcome.wxml-->
+<view>
+
+  <view>
+    ABCD
+  </view>
+
+  <view class="wk-mask-screen" bindtap="hideShouYinTai" wx:if="true">
+
+
+  </view>
+
+  <view class='wk-horizontal-divide' style='right:-16rem;line-height:2rem;color:red'>
+    A
+  </view>
+
+  <view class='wk-mask-screen-middle-box'>
+      <scroll-view style='height:100%; display:inline-block' scroll-x>
+        <swiper-item style='height:10rem'>
+                <image style="display:inline-block;"mode='' src='../../assets/images/lunbo/lunbo1.png'></image>
+        </swiper-item>
+        <swiper-item>
+                <image mode='' src='../../assets/images/lunbo/lunbo1.png'></image>
+        </swiper-item>
+      </scroll-view>
+  </view>
+
+</view>

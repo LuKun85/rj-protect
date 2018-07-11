@@ -1,0 +1,14 @@
+/* pages/map/classifymap.wxss */
+
+.mapView {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mapView .map{
+   display: inline-block;
+   height: 100%;
+   width: 100%;
+   border-radius: 16rpx;
+}

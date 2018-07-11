@@ -1,0 +1,6 @@
+/* pages/map/classifymap.wxss */
+
+.mapView {
+  height: 100%;
+  margin: 1rem;
+}

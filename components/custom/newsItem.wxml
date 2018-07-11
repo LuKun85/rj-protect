@@ -1,0 +1,30 @@
+<template name="newsItem">
+
+  <view class='wk-vertical-divide'> </view>
+  <view class='wk-cell-body newsItem' style='margin:0.5rem;'>
+    <view class='wk-cell-body-bd' style='width:70%;'>
+      <view style='line-height:3rem'>
+        <label class='newsContentBox'>
+          <label class='hotFlag'>最新</label>
+          美丽的中华人民共和国是怎么样的好弄分度盘发到你说的是个单
+        </label>
+      </view>
+      <view class='newsExtraBox'>
+        <view class='newsExtraInfo'>
+          <view style='display:inline-block; width: 30%'>
+            官方
+          </view>
+          <view style='display:inline-block; width: 40%'>
+            2018-01-02
+          </view>
+          <view style='display:inline-block; width: 30%'>
+            300 阅读
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='wk-cell-body-ft newsImgBox'>
+      <image class="newsImg" src='../../assets/images/lunbo/lunbo1.png'></image>
+    </view>
+  </view>
+</template>

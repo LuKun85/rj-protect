@@ -1,0 +1,14 @@
+<template name="messageItem">
+        <view class='wk-cell-body' style='margin-top:0.5rem; margin-bottom:0.5rem'>
+          <view class='wk-cell-body-hd' style='width:30%;text-align:center'>
+            {{item.name}}
+          </view>
+          <view class='wk-cell-body-bd' style='width:40%; font-weight:400; font-size:10px; '>
+             <textarea auto-height maxlength="120" disabled="true" style='display:block; width:100%;'>{{item.remark}}
+             </textarea>
+          </view>
+          <view class='wk-cell-body-ft' style='width:30%; text-align:center; color:#2C9054; font-weight:bold;'>
+             {{item.price}}
+          </view>
+        </view>
+</template>

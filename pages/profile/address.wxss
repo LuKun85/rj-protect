@@ -1,0 +1,110 @@
+/* pages/profile/address.wxss */
+
+.addressCell {
+  backGround-color: #fff;
+  margin: 0.4rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  display: block;
+  border-style: solid;
+  border-radius: 4px;
+  border-width: thin;
+  border-color: #ddd;
+}
+
+.addressCell .addressCell_hd {
+  display: block;
+  line-height: 1.4;
+}
+
+.addressCell .addressCell_bd {
+  display: block;
+  line-height: 2.0;
+}
+
+.addressCell .addressCell_ft {
+  display: block;
+  line-height: 2.0;
+  border-top: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+}
+
+.addressCell_hd .addressCell_hd_item {
+  display: box;
+  backGround-color: #FFFFFF;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+  margin-bottom: 0.1rem;
+}
+
+.addressCellContactName {
+  display: inline-block;
+  width: 4rem;
+  font-size: 14px;
+  vertical-align: center;
+}
+
+.addressCellContactPhone {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.addressCellAddressTag {
+  display: inline-block;
+  border-style: solid;
+  font-size: 9px;
+  position: relative;
+  bottom: 0.18rem;
+  border-width: thin;
+  border-color: #0099FF;
+  margin-left: 0.8rem;
+  width: 1.6rem;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.addressCellAddressDetail {
+  line-height: 2.0;
+  display: inline-block;
+  width: 100%;
+  word-break: break-all;
+  height: 2rem;
+  max-height: 2.5rem;
+  font-size: 12px;
+  font-weight: 350;
+  color: #666;
+}
+
+.defaultFlag {
+  font-size: 12px;
+  margin: 0.3rem 0 0.3rem 0;
+}
+
+.LabelEditButton {
+  float: right;
+}
+
+.LabelEditButton image {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.LabelEditButton label {
+  position: relative;
+  bottom: 0.4rem;
+}
+
+.addressFoot-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #CCCCCC;
+}
+
+.addressFoot-bottom button {
+  width: 80%;
+  border-radius: 1.5rem;
+  font-size: 14px;
+ }

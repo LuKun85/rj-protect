@@ -1,0 +1,21 @@
+<!--pages/rank/rank.wxml-->
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" bindscroll="scroll">
+
+  <view wx:for="{{dataList}}" wx:for-item="itemList" wx:key="item.id">
+    <template is="rankList" data="{{...itemList}}" />
+  </view>
+
+  <template name="rankList">
+    <view class="rank-item" data-id="{{id}}" bindtap="previewId">
+      <text class="rank-no">{{id}}.</text>
+      <view class="rank-img">
+        <image src="{{background_img}}"></image>
+        <image src="{{logo_img}}"></image>
+      </view>
+      <view class="rank-name">{{name}}</view>
+      <view class="rank-count">小区:{{parkName}}</view>
+      <text class="rank-uv">{{point}}</text>
+    </view>
+  </template>
+
+</scroll-view>

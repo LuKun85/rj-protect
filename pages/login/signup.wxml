@@ -1,0 +1,46 @@
+<view>
+
+  <view style='display:block; width:100%;'>
+    <image class="loginPageTopImg" src='../../assets/images/lunbo/lunbo3.png'> </image>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd" style= 'flex:1'>
+        <view class="weui-label_d">手机号</view>
+      </view>
+      <view class="weui-cell__bd" style='flex:4'>
+        <input class="weui-input" maxlength="11" type="number" confirm-type="next" placeholder="请输入手机号" focus="true" bindinput='enterPhoneNumber'/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd" style= 'flex:1'>
+        <view class="weui-label_d">短信码</view>
+      </view>
+      <view class="weui-cell__bd" style= 'flex:3; margin-left:10px'>
+        <input class="weui-input" maxlength="6" type="number" placeholder="请输入验证码" bindinput='enterPhoneVerifyCode'/>
+      </view>
+      <view class="weui-cell__ft verifyCodeSpan" bindtap='sendVerifyCode'>
+        <button class="weui-vcode-btn verifyCodeBox" disabled="{{verifyCodeCountDisable}}">{{verifyCodeCounting}}</button>
+      </view>
+    </view>
+  </view>
+
+    <button class="weui-btn signUpSwitchButton" type="primary" open-type='getUserInfo' bindgetuserinfo='doSignUp'>
+      <image src='../../assets/images/wechat.png' class='signUpButtonIcon'></image>
+      微信授权/用户注册
+    </button>
+
+
+    <view class='returnPrimaryPage' bindtap='returnPrimaryPage'>
+     <label>返回首页</label>
+  </view>
+
+  <view class="weui-footer">
+    <view class="weui-footer_fixed-bottom">
+      点击注册表示同意融久环保用户协议
+    </view>
+  </view>
+
+</view>

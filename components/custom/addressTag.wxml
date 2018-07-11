@@ -1,0 +1,8 @@
+<!--components/custom/addressTag.wxml-->
+<template name="addressTag">
+   
+       <view >
+        {{tagName}}
+       </view>
+
+</template>

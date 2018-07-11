@@ -1,0 +1,27 @@
+<!--pages/primary/recycleDate.wxml-->
+
+<view>
+  <view>
+    <view class="searchBoard"  bindtap="activateSearch">
+      <view class="searchBox">
+        <input class="searchInput" placeholder='请输入小区所在位置' maxlength='10' bindinput="enterSearchCondition">
+        </input>
+        <button class="searchIcon buttom-no-margin-padding" bindtap='searchHouseparkRecycle'><span>搜索</span></button>
+      </view>
+      <!-- <view class="chooseSearchBoard">
+            <scroll-view class='scroll-view' scroll-y="true" >
+            	<li>
+            		nihaobai
+            	</li>
+            </scroll-view>
+      </view> -->
+    </view>
+  </view>
+
+  <import src="../../components/custom/houseparkCard.wxml" />
+ 
+  <view>
+    <template wx:for="{{recycleList}}" wx:for-item="item" wx:key="item.id" is="houseparkCard" data="{{item, month, filepath}}" />
+  </view>
+
+</view>

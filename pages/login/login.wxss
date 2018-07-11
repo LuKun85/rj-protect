@@ -1,0 +1,17 @@
+/* pages/login/login.wxss */
+
+.loginPageTopImg {
+  height: 8rem;
+  width: 98%;
+  margin: 0.2rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.weui-label{
+  width: 85px;
+}
+
+.returnPrimaryPage{
+  line-height: 50rpx;
+}

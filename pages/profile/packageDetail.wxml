@@ -1,0 +1,59 @@
+<!--pages/profile/packageDetail.wxml-->
+<view> 
+
+    <view class='headerBox'>
+    	
+      <label class="name">总收益:</label>
+      <view class="moneyBox">
+      	 <label class="price">{{packageCountingOrderDetail.totalAmount}}</label>
+      	 <label class="yuan">元</label>
+      </view>
+    </view>
+
+    <view class="detailBox">
+    	
+       <view class='detailHeader'>
+       	<view class="unitName">
+       		名称
+       	</view>
+       	<view class="unitPrice">
+       		单价
+       	</view>
+       	<view class="amount">
+       		数量
+       	</view>
+       	<view class="total">
+       		总价
+       	</view>
+       </view>
+       <view class='detailContent'>
+           <ol>
+               <li wx:for="{{packageCountingOrderItemDetail}}" wx:for-item="item" wx:key="item.id">
+           <template is="packageDetailItem" data="{{...item}}" />
+               </li>
+          </ol>
+
+       </view>
+    </view>
+
+
+</view>
+
+
+<template name="packageDetailItem">
+       	<view class="unitName">
+       		{{goodsName}}
+       	</view>
+       	<view class="unitPrice">
+       		{{goodsPrice}}元
+       	</view>
+       	<view class="amount">
+       		{{goodsWeight}}公斤
+       	</view>
+       	<view class="total">
+       		{{goodsAmount}}元
+       	</view>
+</template>
+
+
+

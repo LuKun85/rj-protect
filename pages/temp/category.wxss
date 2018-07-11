@@ -1,0 +1,31 @@
+/* pages/temp/category.wxss */
+
+.categoryPage {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  background-color: #bbb;
+  min-height: 600px;
+}
+
+.categoryName {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 18px;
+  display: inline-block;
+  width: 100%;
+}
+
+.nameBox {
+  display: inline-block;
+  padding: 0.2rem;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#28834C), to(#8ADCAA));
+  background-image: -webkit-linear-gradient(left, #28834C 0, #8ADCAA 100%);
+  background-image: linear-gradient(90deg, #28834C 0, #8ADCAA 100%);
+  box-shadow:5px 2px 6px #000;
+}
+.categoryName .firstName {
+  margin: 0.5rem;
+  color: white;
+  font-style: oblique;
+}

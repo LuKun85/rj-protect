@@ -1,0 +1,86 @@
+
+
+.itemBox {
+  display: inline-block;
+  width: 95%;
+  text-align: center;
+  background: -webkit-linear-gradient(top, #3a404d, #181c26);
+  background: linear-gradient(to bottom, #3a404d, #181c26);
+  border-radius: 10px;
+  box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
+}
+
+
+.itemBox ol {
+  counter-reset: rankBoard;
+}
+.itemBox ol li {
+  display: inline-block;
+  width: 80%;
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  counter-increment: rankBoard;
+  padding: 18px 10px 18px 50px;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+          transform: translateZ(0) scale(1, 1);
+}
+.itemBox ol li::before {
+  content: counter(rankBoard);
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: #c24448;
+  background: #fff;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.itemBox ol li::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fa6855;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+}
+
+
+.itemBox ol li {
+  background: #5CBB44;
+}
+.itemBox ol li::after{
+  background: #5CBB44;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+}
+
+
+.rankBoard ol li:first-child {
+  background: #fa6855;
+}
+.rankBoard ol li:first-child::after {
+  background: #fa6855;
+}
+
+.itemBox ol li:hover {
+  z-index: 2;
+  overflow: visible;
+}
+.itemBox ol li:hover::after {
+  opacity: 1;
+  -webkit-transform: scaleX(1.06) scaleY(1.03);
+          transform: scaleX(1.06) scaleY(1.03);
+}

@@ -1,0 +1,141 @@
+/* pages/appointment/appointmentTabPage.wxss */
+
+@import  './appointmentTabPageExtend.wxss';
+
+
+.scanImgCell {
+  padding: 10px;
+  text-align: center;
+}
+
+.scanImgCell .scanImgCellBox {
+  display: inline-block;
+  padding: 10px;
+}
+
+.scanImgBox {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.scanImgBox image {
+  width: 6rem;
+  height: 6rem;
+}
+
+.stepBall {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  /* background: -webkit-radial-gradient(50% 120%, circle cover, #09C7F7, #0a0a0a 80%, #000 100%); */
+}
+
+.stepBall:before {
+  content: "";
+  position: absolute;
+  /* background: -webkit-radial-gradient(50% 120%, circle cover, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%); */
+  border-radius: 50%;
+  bottom: 2.5%;
+  left: 5%;
+  opacity: 0.6;
+  height: 100%;
+  width: 90%;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  z-index: 2;
+}
+
+.stepBall:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  border-radius: 50%;
+  /* background: -webkit-radial-gradient(50% 50%, circle cover, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+  -webkit-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  transform: translateX(-80px) translateY(-90px) skewX(-20deg); */
+  -webkit-filter: blur(10px);
+  filter: blur(5px);
+}
+
+.progress {
+  height: 30px;
+  line-height: 35px;
+  background: #809495;
+  box-shadow: none;
+  padding: 6px;
+  margin-top: 20px;
+  overflow: visible;
+  border-radius: 10px;
+}
+
+.progress:after {
+  content: "";
+  display: block;
+  border-top: 4px dashed #fff;
+  margin-top: 8px;
+}
+
+.progressbar-title {
+  color: #d8dedc;
+  font-size: 15px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.progress .progress-bar {
+  position: relative;
+  border-radius: 10px 0 0 10px;
+  animation: animate-positive 2s;
+}
+
+.progress .progress-bar .progressSpan {
+  position: absolute;
+  top: -50px;
+  right: -40px;
+  color: #fff;
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 5px 7px;
+  background: #333;
+  border-radius: 0 0 5px 5px;
+}
+
+.progress .progress-bar .progressSpan:before {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  left: 18px;
+  border: 7px solid transparent;
+  border-top: 7px solid #333;
+}
+
+.progress .progress-bar .progressSpan:after {
+  content: "\f072";
+  font-family: fontawesome;
+  font-size: 48px;
+  color: #333;
+  position: absolute;
+  top: 51px;
+  right: 6px;
+  transform: rotateZ(48deg);
+}
+
+@-webkit-keyframes animate-positive {
+  0% {
+    width: 0%;
+  }
+}
+
+@keyframes animate-positive {
+  0% {
+    width: 0%;
+  }
+}

@@ -1,0 +1,5 @@
+/* components/custom/addressTag.wxss */
+
+.addressTag{
+  color: yellow
+}

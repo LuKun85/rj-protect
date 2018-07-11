@@ -1,0 +1,49 @@
+<view>
+
+  <view style='display:block; width:100%;'>
+    <image class="loginPageTopImg" src='../../assets/images/lunbo/lunbo1.png'> </image>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label" style='width:85px'>手机号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" maxlength="11" type="number" confirm-type="next" placeholder="请输入手机号" focus="true" />
+      </view>
+      <view class="weui-cell__ft">
+        <view class="weui-vcode-btn">绑定微信</view>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">短信码</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" maxlength="6" type="number" placeholder="请输入验证码" />
+      </view>
+      <view class="weui-cell__ft">
+        <view class="weui-vcode-btn">获取短信</view>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">图形码</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" maxlength="4" placeholder="请输入验证码" />
+      </view>
+      <view class="weui-cell__ft">
+        <image class="weui-vcode-img" src="http://127.0.0.1:7909/mmp/image/captcha-image" style="width: 108px"></image>
+      </view>
+    </view>
+  </view>
+
+  
+
+  <view class="weui-cells__tips" style='text-align:center;margin-top:1rem'>点击注册表示同意融久环保用户协议</view>
+
+</view>

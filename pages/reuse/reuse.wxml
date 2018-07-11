@@ -1,0 +1,64 @@
+<view>
+  <!-- <view class='navigationBar'>
+    <view style='display:inline-block; margin:1.8rem 0 0 0.5rem; color:white; font-weight:400; font-size: 1.0rem'>
+      新分类 · 新回收
+    </view>
+  </view> -->
+  <view class='weui-cells__title' style='padding-left:0; padding-right:0'>
+    <view class='weui-cell' style='background-color: #FFFFFF; height:2.5rem; padding: 0 0 0 0' bindtap='todayExpressSchedule'>
+      <view class='weui-cell__hd'>
+        <image src='../../assets/images/express.png' style='display:block; height:1.8rem; width:1.8rem; margin-left:0.8rem'></image>
+      </view>
+      <view class='weui-cell__bd' style='margin-left:0.8rem; font-weight:300; color: black; font-size: 1.0rem'>
+        今日运收
+      </view>
+    </view>
+
+    <view class='weui-cell' style='background-color: #FFFFFF; height:2.5rem; margin-top: 0.8rem; padding:0 0 0 0' bindtap='todayExpressSchedule'>
+      <view class='weui-cell__hd'>
+        <image src='../../assets/images/calender.png' style='display:block; height:1.8rem; width:1.8rem; margin-left:0.8rem'></image>
+      </view>
+      <view class='weui-cell__bd' style='margin-left:0.8rem; font-weight:300; color: black; font-size: 1.0rem'>
+        收送安排
+      </view>
+    </view>
+
+    <view class='weui-cell' style='background-color: #FFFFFF; height:2.5rem; padding: 0 0 0 0' bindtap='todayExpressSchedule'>
+      <view class='weui-cell__hd'>
+        <image src='../../assets/images/gps.png' style='display:block; height:1.8rem; width:1.8rem; margin-left:0.8rem'></image>
+      </view>
+      <view class='weui-cell__bd' style='margin-left:0.8rem; font-weight:300; color: black; font-size: 1.0rem'>
+        回收点
+      </view>
+    </view>
+
+    <view class='weui-cell' style='background-color: #FFFFFF; height:2.5rem; padding: 0 0 0 0; margin-top: 0.8rem;'>
+      <view class='weui-cell__hd'>
+        <image src='../../assets/images/manual.png' style='display:block; height:1.8rem; width:1.8rem; margin-left:0.8rem'></image>
+      </view>
+      <view class='weui-cell__bd' style='margin-left:0.8rem; font-weight:300; color: black; font-size: 1.0rem'>
+        分类手册
+      </view>
+    </view>
+
+    <view class='weui-cell' style='background-color: #FFFFFF; height:2.5rem; padding: 0 0 0 0'>
+      <view class='weui-cell__hd'>
+        <image src='../../assets/images/price.png' style='display:block; height:1.8rem; width:1.8rem; margin-left:0.8rem'></image>
+      </view>
+      <view class='weui-cell__bd' style='margin-left:0.8rem; font-weight:300; color: black; font-size: 1.0rem'>
+        回收价格
+      </view>
+    </view>
+
+    <button open-type="contact" style='background-color: #FFFFFF; border:none; height:2.5rem; padding: 0 0 0 0; margin-top: 0.8rem; display:inline; text-align:left'>
+      <view class='weui-cell' style='background-color: #FFFFFF; height:2.5rem; padding: 0 0 0 0; margin-top: 0.8rem;'>
+        <view class='weui-cell__hd'>
+          <image src='../../assets/images/service.png' style='display:block; height:1.8rem; width:1.8rem; margin-left:0.8rem'></image>
+        </view>
+        <view class='weui-cell__bd' style='margin-left:0.8rem; font-weight:300; color: black; font-size: 1.0rem;'>客服
+        </view>
+      </view>
+    </button>
+
+  </view>
+</view>

@@ -1,0 +1,199 @@
+<view style='overflow-x: hidden'>
+  <!-- 地址信息 -->
+  <view class='localtionBar'>
+    <view style='display:inline-block;width:70%'>
+      <image src='../../assets/images/grid/location.png' class='locationIcon'></image>
+      <view class='locationName'>{{locationCity}}</view>
+    </view>
+    <view style='display:inline-block;width:30%'>
+      <button hidden="{{loginStatus == 'Y' ? true : false}}" bindtap="showLoginPage" class='loginStatus'>未登录</button>
+    </view>
+  </view>
+
+  <view class='memberInfoBar'>
+    <open-data class="memberHeadIcon" type="userAvatarUrl"></open-data>
+    <open-data class="memberName" type="userNickName"></open-data>
+    <image src='../../assets/images/profile/realFlag.png' class='realFlag' hidden="{{memberInfo.realFlag == 'Y' && loginStatus == 'Y'? false:true}}"></image>
+    <view class='integral'>
+      <image src='../../assets/images/profile/integral.png' class='integralIcon'></image>
+      <label class='integral'>信誉值:{{memberInfo.memberIntegarl}}</label>
+    </view>
+  </view>
+
+  <view class='assetsBar'>
+    <view class='weui-flex' style='height:100%; align-items:center;'>
+      <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
+        <view style='display:inline-block;height:100%; width:100%'>
+          <image src='../../assets/images/profile/postTotalTimes.png' class='icon'></image>
+          <view class='desc'>总投递</view>
+          <view class='info'>{{memberInfo.postTotalTimes}}次</view>
+        </view>
+      </view>
+
+      <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
+        <view style='display:inline-block;height:100%; width:100%'>
+          <image src='../../assets/images/profile/postTotalWeight.png' class='icon'></image>
+          <view class='desc'>总重量</view>
+          <view class='info'>{{memberInfo.postTotalWeight}}公斤</view>
+        </view>
+      </view>
+
+      <!-- <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
+        <view style='display:inline-block;height:100%; width:100%'>
+          <image src='../../assets/images/profile/postTotalCount.png' class='icon'></image>
+          <view class='desc'>总件数</view>
+          <view class='info'>{{memberInfo.postTotalCount}}件</view>
+        </view>
+      </view> -->
+
+      <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
+        <view style='display:inline-block;height:100%; width:100%'>
+          <image src='../../assets/images/profile/postTotalProfit.png' class='icon'></image>
+          <view class='desc'>总收益</view>
+          <view class='info'>{{memberInfo.postTotalProfit}}元</view>
+        </view>
+      </view>
+
+      <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
+        <view style='display:inline-block;height:100%; width:100%'>
+          <image src='../../assets/images/profile/availableProfit.png' class='icon'></image>
+          <view class='desc'>余额</view>
+          <view class='info'>{{memberInfo.availableProfit}}元</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="weui-grids">
+    <a href="" class="weui-grid js_grid" bindtap="bindPackage">
+      <button class='gridButton'>
+        <view class="weui-grid__icon">
+          <image src="../../assets/images/grid/scan.png" alt=""></image>
+        </view>
+        <p class="weui-grid__label">
+          绑定袋子
+        </p>
+      </button>
+    </a>
+    <a href="" class="weui-grid js_grid" bindtap="showShouYinTai">
+      <button class='gridButton'>
+        <view class="weui-grid__icon">
+          <image src="../../assets/images/grid/package.png" alt=""></image>
+        </view>
+        <p class="weui-grid__label">
+          购买袋子[{{memberInfo.avaiblePackageCount != null ? memberInfo.avaiblePackageCount: '0'}}]
+        </p>
+      </button>
+    </a>
+
+    <a href="" class="weui-grid js_grid" bindtap="showMemberPackageList">
+      <button class='gridButton'>
+        <view class="weui-grid__icon">
+          <image src="../../assets/images/grid/mypackage.png" alt=""></image>
+        </view>
+        <p class="weui-grid__label">
+          我的袋子[{{memberInfo.currentPackageCount != null ? memberInfo.currentPackageCount: '0'}}]
+        </p>
+      </button>
+    </a>
+
+    <a href="" class="weui-grid js_grid">
+      <button class='gridButton'>
+        <view class="weui-grid__icon">
+          <image src="../../assets/images/grid/outcome.png" alt=""></image>
+        </view>
+        <p class="weui-grid__label">
+          个人提现
+        </p>
+      </button>
+    </a>
+
+    <a href="" class="weui-grid js_grid" bindtap="showMemberAddressList">
+      <button class='gridButton'>
+        <view class="weui-grid__icon">
+          <image src="../../assets/images/grid/address.png" alt=""></image>
+        </view>
+        <p class="weui-grid__label">
+          我的地址
+        </p>
+      </button>
+    </a>
+
+    <a href="" class="weui-grid js_grid">
+      <button open-type='contact' class='gridButton'>
+        <view class="weui-grid__icon">
+          <image src="../../assets/images/grid/service.png" alt=""></image>
+        </view>
+        <p class="weui-grid__label">
+          客服
+        </p>
+      </button>
+    </a>
+  </view>
+
+
+  <view class="commodity_screen" bindtap="hideShouYinTai" wx:if="{{showShouYinTaiStatus}}">
+
+  </view>
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showShouYinTaiStatus}}">
+
+    <view class='payDescCell'>
+      <view class='payDescCell_item'>
+        <view class='payDescCell_item_hd'>
+          <label>
+            购买数量:
+          </label>
+        </view>
+        <view class='payDescCell_item_bd'>
+          <slider min='0' max='10' step="1" show-value='true' block-size='14' value="{{applyPackageCount}}" bindchange="applyPackageCount" bindchanging='applyPackageCount' />
+        </view>
+      </view>
+    </view>
+
+
+    <view class='payDescCell'>
+      <view class='payDescCell_item'>
+        <view class='payDescCell_item_hd'>
+          <label>
+            支付方式:
+          </label>
+        </view>
+        <view class='payDescCell_item_bd'>
+          <radio-group bindchange="payMethodRadioChange" style="margin-left:0.5rem;">
+            <label>
+              <radio checked="true" value="WECHAT" />
+              <label style='position:relative; top:0.1rem'>微信支付</label>
+            </label>
+            <label style='margin-left:2rem'>
+              <radio value="YUE" />
+              <label style='position:relative; top:0.1rem'>余额支付</label>
+            </label>
+          </radio-group>
+        </view>
+      </view>
+    </view>
+
+    <view class='payCell'>
+      <view class='payCell_item'>
+        <view style='display:inline-block; width: 70%'>
+          <label class='totalPriceText'>
+            总价:
+          </label>
+          <label class='totalPriceMoney'>
+            {{totalApplyPackagePrice}}
+          </label>
+          <label class='totalPriceMoney'>
+            元
+          </label>
+        </view>
+        <view class='payButton' bindtap="payApplyPackage">
+          <label style=''>
+            支付
+          </label>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

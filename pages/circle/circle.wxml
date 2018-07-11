@@ -1,0 +1,16 @@
+<!--pages/circle/circle.wxml-->
+<!-- <import src="../../components/mainTabCell.wxml" /> -->
+<import src="../../components/circleCell.wxml" />
+
+
+<view style='height:100%'>
+
+  <scroll-view class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData">
+    <view style="height:12rpx;background-color:#eaeaea"></view>
+
+    <view class="item-view " wx:for="{{dataList}}" wx:for-item="item" wx:key="item.id">
+      <template is="circleCell" data="{{item}}" />
+    </view>
+    <view style="height:12rpx;background-color:#eaeaea"></view>
+  </scroll-view>
+</view>

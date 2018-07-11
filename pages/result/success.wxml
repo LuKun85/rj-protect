@@ -1,0 +1,16 @@
+<!--pages/result/success.wxml-->
+
+<view>
+
+  <view style='margin-top: 3rem; margin-bottom:4rem; line-height:4rem'>
+    <view style='text-align:center'>
+     <view class='success'>
+        <label class='message'>
+           {{successMessage}}
+        </label>
+     </view>
+    </view>
+  </view>
+
+  <!-- <view class='wk-vertical-divide'></view> -->
+</view>

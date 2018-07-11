@@ -1,0 +1,76 @@
+<!--pages/temp/category.wxml-->
+<import src="../../components/custom/priceItem.wxml" />
+<view class='categoryPage'>
+
+  <view>
+    <view class='categoryName'>
+      <view class='nameBox'>
+        <label class='firstName'>
+          融久 - 塑料
+        </label>
+      </view>
+    </view>
+  </view>
+  <view class='wk-box wk-no-padding wk-no-margin' style='margin-top:0.5rem'>
+    <!-- 地址 -->
+    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='wk-cell'>
+        <view class='wk-cell-title'>
+          <view class='wk-cell-title-hd' style='width:30%; text-align:center'>
+            名称:
+          </view>
+          <view class='wk-cell-title-bd' style='width:40%; text-align:center'>
+            描述:
+          </view>
+          <view class='wk-cell-title-ft' style='width:30%;text-align:center'>
+            价格:
+          </view>
+        </view>
+        <view class='wk-vertical-divide'></view>
+
+        <view wx:for="{{categoryItemList}}" wx:for-item="item" wx:key="item.id">
+          <template is="priceItem" data="{{item}}" />
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+  </view>
+
+
+<view>
+    <view class='categoryName'>
+      <view class='nameBox'>
+        <label class='firstName'>
+          融久 - 金属
+        </label>
+      </view>
+    </view>
+  </view>
+  <view class='wk-box wk-no-padding wk-no-margin' style='margin-top:0.5rem'>
+    <!-- 地址 -->
+    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='wk-cell'>
+        <view class='wk-cell-title'>
+          <view class='wk-cell-title-hd' style='width:30%; text-align:center'>
+            名称:
+          </view>
+          <view class='wk-cell-title-bd' style='width:40%; text-align:center'>
+            描述:
+          </view>
+          <view class='wk-cell-title-ft' style='width:30%;text-align:center'>
+            价格:
+          </view>
+        </view>
+        <view class='wk-vertical-divide'></view>
+
+        <view wx:for="{{categoryItemList}}" wx:for-item="item" wx:key="item.id">
+          <template is="priceItem" data="{{item}}" />
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+  </view>
+
+</view>

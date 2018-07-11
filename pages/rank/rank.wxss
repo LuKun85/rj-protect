@@ -1,0 +1,60 @@
+/* pages/rank/rank.wxss */
+
+.rank-item {
+  height: 140rpx;
+  background: #fff;
+  margin-top: 8rpx;
+  padding: 20rpx 20rpx 20rpx 45rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.rank-item .rank-no {
+  width: 20rpx;
+  height: 100rpx;
+  float: left;
+  margin-right: 60rpx;
+  margin-top: 25rpx;
+  position: relative;
+}
+
+.rank-item .rank-img {
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+  position: relative;
+}
+
+.rank-item .rank-img image {
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  top: 0;
+  left: 0;
+}
+
+.rank-item .rank-name {
+  font-size: 32rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.rank-item .rank-count {
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #1e75b8;
+}
+
+.rank-item .rank-uv {
+  font-size: 35rpx;
+  position: absolute;
+  bottom: 50rpx;
+  right: 40rpx;
+  font-family: "仿宋", "Dosis", sans-serif;
+  color: #ff5e88;
+  font-weight: 500;
+}

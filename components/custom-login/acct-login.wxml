@@ -1,0 +1,35 @@
+<!--components/dialog/custom-acct-register.wxml-->
+
+<view hidden='{{dialogHidden}}'>
+  <view class='drawer_screen' bindtap='cancleBtn' />
+  <view class='drawer_box'>
+    <view class="drawer_title">{{titleText}}</view>
+    <view class='drawer_content'>
+      <view class='user'>
+        <view class='user-span'>
+          <image src="../../assets/images/user.png"></image>
+          <input maxlength='11' type='number' auto-focus='true'>
+          </input>
+          <button style='mini'>微信获取</button>
+        </view>
+      </view>
+
+      <view class='user'>
+        <view class='user-span'>
+          <image src="../../assets/images/user.png"></image>
+          <input maxlength='11' type='number' auto-focus='true'>
+          </input>
+          <button style='mini'> 验证码 </button>
+        </view>
+      </view>
+
+      <button type='primary' style='width:5rem;margin-left:auto;margin-right:auto;'> 注册 </button>
+
+    </view>
+
+    <!-- <view class='sureQuery'>
+      <view bindtap='cancleBtn' class='btn' hidden='{{cancleBtn}}'>取消    </view>
+      <view bindtap='determineBtn' class='btnSure'>确定</view>
+    </view> -->
+  </view>
+</view>

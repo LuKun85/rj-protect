@@ -1,0 +1,227 @@
+/* 自定义 */
+
+.wk-box {
+  backGround-color: #fff;
+  margin: 0.4rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  display: block;
+  border-style: solid;
+  border-radius: 4px;
+  border-width: thin;
+  border-color: #ddd;
+}
+
+.wk-cells-noline {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.wk-cells {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.wk-cells:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  transform: scaleY(0.5);
+}
+
+.wk-cells:after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+}
+
+.wk-cell {
+}
+
+.wk-cell .wk-cell-title {
+  font-size: 11px;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #444;
+}
+
+.wk-cell-title .wk-cell-title-hd {
+  display: inline-block;
+  width: 20%;
+}
+
+.wk-cell-title .wk-cell-title-bd {
+  display: inline-block;
+  width: 70%;
+}
+
+.wk-cell-title .wk-cell-title-ft {
+  display: inline-block;
+  width: 10%;
+}
+
+.wk-cell .wk-cell-body {
+  font-size: 14px;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.wk-cell-body .wk-cell-body-hd {
+  display: inline-block;
+  width: 20%;
+  font-size: 12px;
+  color: #2bd5b3;
+}
+
+.wk-cell-body-hd .icon {
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  position: relative;
+  top: 0.1rem;
+}
+
+.wk-cell-body .wk-cell-body-bd {
+  display: inline-block;
+  width: 70%;
+}
+
+.wk-cell-body .wk-cell-body-ft {
+  display: inline-block;
+  width: 10%;
+}
+
+.wk-cell-body-ft .icon {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: auto;
+  position: relative;
+  top:0.3rem;
+}
+
+.wk-cell .wk-cell-foot {
+  font-size: 12px;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #444;
+}
+
+.wk-cell-foot:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  transform: scaleY(0.5);
+}
+
+.wk-vertical-divide {
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  transform: scaleY(0.5);
+}
+
+.wk-page-toptap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #ccc;
+  padding-top: 14rpx;
+  padding-bottom: 14rpx;
+}
+
+.wk-page-head {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #ccc;
+  padding-top: 14rpx;
+  padding-bottom: 14rpx;
+}
+
+.wk-page-foot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ccc;
+}
+
+.wk-page-foot button {
+  width: 80%;
+  border-radius: 1.5rem;
+  font-size: 14px;
+}
+
+
+.wk-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+
+.wk-foot-dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.wk-foot-dialog-box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+
+.wk-no-padding {
+  padding: 0;
+}
+
+.wk-no-margin {
+  margin: 0;
+}

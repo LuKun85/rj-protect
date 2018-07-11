@@ -1,0 +1,141 @@
+.mainContainer {
+  margin: 0 auto;
+  width: 960px;
+}
+.mainContainer ul {
+  padding: 0 10px;
+  margin: 0;
+}
+.mainContainer ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mainContainer h1 {
+  font-size: 22px;
+  margin: 0;
+  text-align: center;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.white {
+  background-color: white;
+}
+
+.green {
+  background-color: green;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.listContainer {
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+}
+.listContainer li {
+  position: absolute;
+  display: inline-block;
+  width: 300px;
+  height: 200px;
+  transition: left 1s, width .8s;
+}
+.listContainer li:nth-child(1) {
+  /* Just for Fun Comment background-image to see it */
+  background-color: #330000;
+  color: #00cccc;
+  /* A little trick to bypass browser Cache */
+  background-image: url(http://lorempixel.com/g/501/200);
+  background-position: top left;
+  left: 0px;
+}
+.listContainer li:nth-child(1):hover {
+  width: 500px;
+}
+.listContainer li:nth-child(1):hover  li:nth-child(2) {
+  left: 440px;
+}
+.listContainer li:nth-child(1):hover  li:nth-child(3) {
+  left: 460px;
+}
+.listContainer li:nth-child(1):hover  li:nth-child(4) {
+  left: 480px;
+}
+.listContainer li:nth-child(1):hover  li:nth-child(5) {
+  left: 500px;
+}
+.listContainer li:nth-child(2) {
+  /* Just for Fun Comment background-image to see it */
+  background-color: #660000;
+  color: #009999;
+  /* A little trick to bypass browser Cache */
+  background-image: url(http://lorempixel.com/g/502/200);
+  background-position: top left;
+  left: 100px;
+}
+.listContainer li:nth-child(2):hover {
+  width: 500px;
+}
+.listContainer li:nth-child(2):hover  li:nth-child(3) {
+  left: 560px;
+}
+.listContainer li:nth-child(2):hover  li:nth-child(4) {
+  left: 580px;
+}
+.listContainer li:nth-child(2):hover  li:nth-child(5) {
+  left: 600px;
+}
+.listContainer li:nth-child(3) {
+  /* Just for Fun Comment background-image to see it */
+  background-color: #990000;
+  color: #006666;
+  /* A little trick to bypass browser Cache */
+  background-image: url(http://lorempixel.com/g/503/200);
+  background-position: top left;
+  left: 200px;
+}
+.listContainer li:nth-child(3):hover {
+  width: 500px;
+}
+.listContainer li:nth-child(3):hover  li:nth-child(4) {
+  left: 680px;
+}
+.listContainer li:nth-child(3):hover  li:nth-child(5) {
+  left: 700px;
+}
+.listContainer li:nth-child(4) {
+  /* Just for Fun Comment background-image to see it */
+  background-color: #cc0000;
+  color: #003333;
+  /* A little trick to bypass browser Cache */
+  background-image: url(http://lorempixel.com/g/504/200);
+  background-position: top left;
+  left: 300px;
+}
+.listContainer li:nth-child(4):hover {
+  width: 500px;
+}
+.listContainer li:nth-child(4):hover  li:nth-child(5) {
+  left: 800px;
+}
+.listContainer li:nth-child(5) {
+  /* Just for Fun Comment background-image to see it */
+  background-color: red;
+  color: black;
+  /* A little trick to bypass browser Cache */
+  background-image: url(http://lorempixel.com/g/505/200);
+  background-position: top left;
+  left: 400px;
+}
+.listContainer li:nth-child(5):hover {
+  width: 500px;
+}

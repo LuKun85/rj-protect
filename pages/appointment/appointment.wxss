@@ -1,0 +1,127 @@
+/* pages/appointment/appointment.wxss */
+
+.appointmentPage {
+  font-weight: 400;
+  margin: 0.2rem;
+}
+
+.weui-cells {
+  font-size: 15px;
+}
+
+.weui-input {
+  font-weight: 400;
+  color: black;
+}
+
+.inputLeftMargin {
+  margin-left: 1.5rem;
+}
+
+.weui-cell__hd {
+  flex: 2;
+}
+
+.weui-cell__bd {
+  flex: 6;
+}
+
+.weui-cell__ft {
+  flex: 1;
+}
+
+/* 用户信息栏 */
+
+
+.orderMember {
+  height: 3.5rem;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#bbddd6), to(#44887a));
+  background-image: -webkit-linear-gradient(left, #bbddd6 0, #44887a 100%);
+  background-image: linear-gradient(90deg, #bbddd6 0, #44887a 100%);
+}
+
+.orderMember .orderMemberHeadIcon {
+  display: inline-block;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.orderMemberName {
+  height: 1.8rem;
+  font-weight: 400;
+  font-size: 14px;
+  color: #7569a8;
+}
+
+.orderMemberPhone {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.extraPackageCountInput {
+  border: solid;
+  border-width: thin;
+  margin: 0.1rem 0 0.1rem 0.3rem;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 4px;
+  display: inline-block;
+  min-height: 60%;
+}
+
+.orderSubmitButton {
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  top: -1rem;
+}
+
+.orderRemark__hd {
+  align-items: top;
+  -webkit-box-align: top;
+  -webkit-align-items: top;
+}
+
+
+.appointmentTimeBox{
+  display:inline-block; width: 50%;height: 100%;
+}
+
+.appointmentTimeBox label{
+  font-size: 12px;
+
+}
+
+.appointmentTimeBox picker{
+  display: inline-block;
+  margin-left: 10rpx; 
+}
+
+
+.extraGoods{
+  display: inline-block; width:20%;height:100%;
+}
+
+.extraGoodsType{
+  display: inline-block; width:80%;height:100%;
+}
+
+.extraGoodsType ol{
+  display: inline-block; width:33%;height:100%;
+}
+
+.extraGoodsType ol label{
+   margin-left: 10rpx;
+}
+
+.extraGoodsType li{
+  display: inline-block; width:30%;height:100%;
+}
+
+
+
+
+

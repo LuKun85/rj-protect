@@ -1,0 +1,227 @@
+<view class='appointmentPage'>
+  <!-- 个人信息 -->
+  <view class='wk-box wk-no-padding wk-no-margin'>
+    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='orderMember'>
+        <open-data class="orderMemberHeadIcon" type="userAvatarUrl"></open-data>
+        <view style='display:inline-block; width:60%; margin-left:0.7rem; position:relative; bottom:0.8rem'>
+          <view>
+            <open-data class="orderMemberName" type="userNickName"></open-data>
+          </view>
+          <view class='orderMemberPhone'>
+            {{memberPhoneNumberSecured}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class='wk-box wk-no-padding wk-no-margin' style='margin-top:0.5rem'>
+    <!-- 地址 -->
+    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='wk-cell'>
+        <view class='wk-cell-title'> 订单信息
+        </view>
+        <view class='wk-vertical-divide'></view>
+        <view class='wk-cell-body'>
+          <view class='wk-cell-body-hd'>
+            地址信息:
+          </view>
+          <view class='wk-cell-body-bd'>
+            {{memberDefaultAddress}}
+          </view>
+          <view class='wk-cell-body-ft'>
+<!--             <image class='icon' src='../../assets/images/change.png'>
+            </image> -->
+          </view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+
+    <!-- 日期 -->
+    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='wk-cell'>
+        <view class='wk-vertical-divide'></view>
+        <view class='wk-cell-body'>
+          <view class='wk-cell-body-hd'>
+            预约日期:
+          </view>
+          <view class='wk-cell-body-bd'>
+            <picker mode="date" value="{{appointmentFromDate}}" start="{{datePickStart}}" end="{{datePickEnd}}" bindchange="bindDateChange">
+              <view class="weui-input">{{appointmentFromDate}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+
+    <!-- 时间 -->
+    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='wk-cell'>
+        <view class='wk-vertical-divide'></view>
+        <view class='wk-cell-body'>
+          <view class='wk-cell-body-hd'>
+            预约时间:
+          </view>
+          <view class='wk-cell-body-bd' style='width: 75%;'>
+             <view class='appointmentTimeBox'>
+                <label>开始</label>
+                 <picker mode="time" id='from' value="{{appointmentFromTime}}" start="{{timePickStart}}" end="{{timePickEnd}}" bindchange="bindFromTimeChange">
+              <view class="weui-input">{{appointmentFromTime}}</view>
+            </picker>
+             </view>
+             <view  class='appointmentTimeBox'>
+                <label>结束</label>
+                 <picker mode="time" id='to' value="{{appointmentToTime}}" start="{{appointmentStartTime}}" end="{{appointmentEndTime}}" bindchange="bindToTimeChange">           
+              <view class="weui-input">{{appointmentToTime}}</view>
+               </picker>
+             </view>
+          </view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 袋子信息 -->
+  <view class='wk-box wk-no-padding wk-no-margin' style='margin-top:0.5rem'>
+    <!-- 袋子编码 -->
+    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='wk-cell'>
+        <view class='wk-cell-title'> 袋子信息
+        </view>
+        <view class='wk-vertical-divide'></view>
+        <view class='wk-cell-body'>
+          <view class='wk-cell-body-hd'>
+            袋子编码:
+          </view>
+          <view class='wk-cell-body-bd'>
+            <input style='font-size:18px; font-weight:600;' name="input" disabled="true" value="{{packageOutCode}}" placeholder='扫描袋子上的二维码获取' />
+          </view>
+          <view class='wk-cell-body-ft' bindtap='regetPackageCode'>
+            <image class='icon' style='width:1.9rem; height:1.9rem; margin-left:0.1rem' src='../../assets/images/scan_200.png'>
+            </image>
+          </view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+
+    <!-- 额外垃圾 -->
+    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='wk-cell'>
+        <view class='wk-vertical-divide'></view>
+        <view class='wk-cell-body'>
+          <view class='wk-cell-body-hd'>
+            额外垃圾:
+          </view>
+          <view class='wk-cell-body-bd' style='width:80%'>
+ 
+            <view class='extraGoods'>
+              <switch unChecked bindchange="applyExtraGoodsSwitch" />
+            </view>
+           
+            <radio-group class='extraGoodsType' bindchange="setExtraGoodsLevel" wx:if="{{applyExtraGoodsFlag}}">
+               <ol> 
+                  <radio value="small" unchecked/>
+                  <label>少</label>
+               </ol>
+               <ol> 
+                  <radio value="much"  unchecked />
+                   <label>多</label>
+               </ol>
+               <ol> 
+                  <radio value="muchmore" unchecked />
+                  <label>很多</label>
+               </ol>
+            </radio-group>
+          </view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+
+    <!-- 额外袋子 -->
+    <!-- <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='wk-cell'>
+        <view class='wk-vertical-divide'></view>
+        <view class='wk-cell-body'>
+          <view class='wk-cell-body-hd'>
+            额外袋子:
+          </view>
+          <view class='wk-cell-body-bd'>
+            <view style='display: inline-block; width:30%;height:100%;'>
+              <switch unChecked bindchange="applyExtraPackageSwitch" />
+            </view>
+            <view style='display: inline-block; width:70%;'>
+              <slider style="margin:0" disabled="{{applySubPackageCountDisabledFlag}}" min='0' max='10' step="1" show-value='true' block-size='14' value="{{applySubPackageCount}}" bindchange="applyExtraPackageCount" bindchanging='applyExtraPackageCount' />
+            </view>
+          </view>
+
+          <view class='wk-cell-body-ft'>
+            <input class="extraPackageCountInput" disabled="{{applySubPackageCountDisabledFlag}}" maxlength='2' type='number' name="input" value='{{applySubPackageCount}}' bindinput='enterSubPackageCount' />
+          </view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view> -->
+
+  </view>
+
+
+  <!-- 备注信息 -->
+  <view class='wk-box wk-no-padding wk-no-margin' style='margin-top:0.5rem'>
+    <!-- 盘点方式 -->
+    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='wk-cell'>
+        <view class='wk-cell-title'> 备注信息
+        </view>
+        <view class='wk-vertical-divide'></view>
+        <view class='wk-cell-body'>
+          <view class='wk-cell-body-hd'>
+            盘点方式:
+          </view>
+          <view class='wk-cell-body-bd' style='width:80%'>
+            <radio-group bindchange="countMethodRadioChange">
+              <view style='margin: 0.2rem 0 0.2rem 0'>
+                <label>
+                  <label>融久分拣</label>
+                  <radio style="margin-left:9rem" value="00" checked="true" />
+                </label>
+              </view>
+              <view class='wk-vertical-divide'>
+              
+              </view>
+              <view style='margin: 0.2rem 0 0.2rem 0'>
+                <label>
+                  <label>自己分拣</label>
+                  <radio style="margin-left:9rem" value="01" />
+                </label>
+              </view>
+            </radio-group>
+          </view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+  </view>
+
+  <view class='wk-page-foot' bindtap='confirmAppointmentOrder'>
+    <button type='primary'>
+      + 点击预约
+    </button>
+  </view>
+
+
+</view>

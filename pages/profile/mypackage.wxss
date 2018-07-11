@@ -1,0 +1,5 @@
+/* pages/profile/mypackage.wxss */
+
+@import  '../../components/custom/mypackageItem.wxss';
+
+

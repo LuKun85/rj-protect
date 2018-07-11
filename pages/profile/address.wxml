@@ -1,0 +1,14 @@
+<import src="../../components/custom-address-cell/addressCell.wxml" />
+
+<view style='backGround-color:#DDDDDD;min-height:30rem'>
+  <view wx:for="{{memberAddressList}}" wx:for-item="item" wx:key="item.id">
+    <template is="addressCell" data="{{item}}" />
+  </view>
+
+  <view class='addressFoot-bottom' bindtap='goAddNewAddressPage'>
+    <button type='primary'>
+      + 新建地址
+    </button>
+  </view>
+
+</view>

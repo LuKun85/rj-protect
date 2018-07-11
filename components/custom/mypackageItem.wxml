@@ -1,0 +1,68 @@
+<template name="mypackageItem">
+
+<!--   <view class='mark'>你</view>
+  <view class='small'>你</view>
+
+    -->
+
+   <label class="packageOutCode"> 袋子编号: {{packageOutCode}} </label>
+   <label class="packageStatus"> {{packageStatusDesc}} </label>
+
+   <view class="packageDetail"> 
+        <ul>
+
+         <view class="detailItem">
+         <view class="checkMoreDetail" bindtap="getMypackageDetail" data-id="{{packageId}}">
+            查看详情
+         </view> 
+         </view> 
+
+        </ul>
+   	  <ul>
+   	  	 <view class="detailItem">
+   	  	 	<label class="itemName">
+   	  	 		预约单号:
+   	  	 	</label>
+   	  	 	<label class="itemContentLong">
+   	  	 		{{appointmentOrderNo}}
+   	  	 	</label>
+         </view> 
+   	  </ul>
+   	  <ul>
+   	  	 <view class="detailItem">
+   	  	 	<label class="itemName">
+   	  	 		预约时间:
+   	  	 	</label>
+   	  	 	<label class="itemContentMax">
+   	  	 		{{appointmentFromDate}}-{{appointmentFromTime}} - {{appointmentToTime}}
+   	  	 	</label>
+         </view> 
+   	  </ul>
+   	  <ul>
+   	  	 <view class="detailItem">
+   	  	 	<label class="itemName">
+   	  	 		收货员:
+   	  	 	</label>
+   	  	 	<label class="itemContentShort">
+   	  	 		{{appointmentOperatorName}}
+   	  	 	</label>
+   	  	 	<label class="itemNamaShort">
+   	  	 		电话:
+   	  	 	</label>
+   	  	 	<label class="itemContentShort">
+   	  	 		{{appointmentOperatorPhone}}
+   	  	 	</label>
+         </view> 
+   	  </ul>
+   	  <ul>
+   	  	 <view class="detailItem">
+   	  	 	<label class="itemName">
+   	  	 		位置:
+   	  	 	</label>
+   	  	 	<label class="itemContentLong">
+   	  	 	</label>
+         </view> 
+   	  </ul>
+   </view>
+
+</template>

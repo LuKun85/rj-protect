@@ -1,0 +1,118 @@
+.wk-mask-screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.wk-mask-screen-middle-box {
+  z-index: 2000;
+  background-color: red;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  line-height: 200rpx;
+  text-align: center;
+}
+
+.wk-mask-screen-middle-box image {
+  display: block;
+  width: 100%;
+  height: 600rpx;
+}
+
+.wk-mask-screen-foot-box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+
+.wk-horizontal-divide {
+  border-left-style: solid;
+  border-right-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  line-height: 10rem;
+  width: 0;
+  transform: scaleX(0.5);
+  position: relative;
+}
+
+.bb, .bb::before, .bb::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bb {
+  width: 400rpx;
+  height: 600rpx;
+  margin: auto;
+  color: #69ca62;
+  box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);
+}
+
+.bb::before, .bb::after {
+  content: '';
+  z-index: -1;
+  margin: -10%;
+  box-shadow: inset 0 0 0 2px;
+  animation: clipMe 4s linear infinite;
+}
+
+.bb::before {
+  animation-delay: -4s;
+}
+
+.bb:hover::after, .bb:hover::before {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* @keyframes clipMe {
+  0%, 100% {
+    clip: rect(0px, 220.0px, 2px, 0px);
+  }
+
+  25% {
+    clip: rect(0px, 2px, 220.0px, 0px);
+  }
+
+  50% {
+    clip: rect(218.0px, 220.0px, 220.0px, 0px);
+  }
+
+  75% {
+    clip: rect(0px, 220.0px, 220.0px, 218.0px);
+  }
+} */
+
+/* top right bottom left */
+
+@keyframes clipMe {
+   0%, 100% {
+    clip: rect(0px, 420.0px, 2px, 0px);
+  }
+
+  25% {
+    clip: rect(0px, 2px, 440.0px, 0px);
+  }
+
+  50% {
+    clip: rect(218.0px, 220.0px, 220.0px, 0px);
+  }
+
+  75% {
+    clip: rect(0px, 220.0px, 220.0px, 218.0px);
+  }
+}

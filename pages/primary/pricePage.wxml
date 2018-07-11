@@ -1,0 +1,102 @@
+<view>
+  <import src="../../components/custom/priceItem.wxml" />
+  <view class='categoryPage'>
+
+<!--     <view>
+      <view class='categoryName'>
+        <view class='nameBox'>
+          <label class='firstName'>
+            融久 - 回收价格表
+          </label>
+
+          <label class='firstName'>
+            日期
+          </label>
+
+          <label class='firstName'>
+            时间
+          </label>
+        </view>
+      </view>
+    </view> -->
+
+
+    <view class='headerBox'>
+      
+      <label class="name">时间</label>
+      <view class="dateBox">
+         <label class="date">2018-01-01 {{nowTime}}</label>
+      </view>
+    </view>
+
+
+  <!--   <view class='wk-box wk-no-padding wk-no-margin' style='margin-top:0.5rem'>
+      <view class='wk-cells-noline wk-no-margin wk-no-padding priceBoxBorder'>
+        <view class='wk-cell'>
+          <view class='wk-cell-title priceItemTitle'>
+            <view class='wk-cell-title-hd' style='width:30%; text-align:center'>
+              名称:
+            </view>
+            <view class='wk-cell-title-bd' style='width:25%; text-align:center'>
+              描述:
+            </view>
+            <view class='wk-cell-title-ft' style='width:30%;text-align:center'>
+              价格:
+            </view>
+            <view class='wk-cell-title-ft' style='width:15%;text-align:center'>
+              单位:
+            </view>
+          </view>
+          <view class='wk-vertical-divide'></view>
+
+          <view wx:for="{{goodsPriceList}}" wx:for-item="item" wx:key="item.id">
+            <template is="priceItem" data="{{item}}" />
+          </view>
+        </view>
+        <view>
+        </view>
+      </view>
+    </view> -->
+
+
+    <view>
+      
+        <scroll-view scroll-y="{{true}}" enable-back-to-top scroll-with-animation style="height: {{scrollWeightHeight+'px'}}" bindscrolltolower='getMorePirceList'>
+          <view class='wk-box wk-no-padding wk-no-margin' style='margin-top:0.5rem'>
+      <view class='wk-cells-noline wk-no-margin wk-no-padding priceBoxBorder'>
+        <view class='wk-cell'>
+          <view class='wk-cell-title priceItemTitle'>
+            <view class='wk-cell-title-hd' style='width:50%; text-align:center'>
+              名称:
+            </view>
+<!--             <view class='wk-cell-title-bd' style='width:25%; text-align:center'>
+              描述:
+            </view> -->
+            <view class='wk-cell-title-ft' style='width:30%;text-align:center'>
+              价格:
+            </view>
+            <view class='wk-cell-title-ft' style='width:20%;text-align:center'>
+              单位:
+            </view>
+          </view>
+          <view class='wk-vertical-divide'></view>
+
+          <view wx:for="{{goodsPriceList}}" wx:for-item="item" wx:key="item.id">
+            <template is="priceItem" data="{{item}}" />
+          </view>
+        </view>
+        <view>
+        </view>
+      </view>
+    </view>
+        </scroll-view>
+
+
+    </view>
+
+
+
+
+  </view>
+
+</view>
