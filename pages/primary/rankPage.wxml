@@ -1,4 +1,4 @@
-<!--pages/rank/rank.wxml-->
+<!-- pages/rank/rank.wxml -->
 <view style='overflow-x:hidden'>
   <view style='text-align:center; padding: 1rem 0 1rem 0'>
     <view class="envato-animate">
@@ -11,33 +11,68 @@
       <view class="envato-balloon">e</view>
     </view>
   </view>
-
+  <view class='tomyranklocation' bindtap='goToMyRankLocation'>
+    <label>我的位置</label>
+  </view>
   <view>
     <view class="swiper-tab">
-      <view class="swiper-tab-item {{currentTab== 'A'?'active':''}}" data-current="A" bindtap="clickTab">年度排行</view>
-      <view class="swiper-tab-item {{currentTab== 'Q'?'active':''}}" data-current="Q" bindtap="clickTab">季度排行</view>
+      <view class="swiper-tab-item {{currentTab== '0'?'active':''}}" data-current="0" bindtap="clickTab">
+        季度排行
+      </view>
+      <view class="swiper-tab-item {{currentTab== '1'?'active':''}}" data-current="1" bindtap="clickTab">
+        年度排行
+      </view>
     </view>
   </view>
-
-
   <view>
     <swiper current="{{currentTab}}" duration="300" style="height: 35rem">
       <swiper-item>
         <view style='padding-top:0.5rem;padding-bottom:1rem;text-align:center'>
           <view class="rankBoard" style='margin-bottom:0.5rem'>
             <view class='header'>
-              <label>
-                年度排行榜
-              </label>
+              <label>季度排行榜</label>
             </view>
             <ol>
-              <li wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id">
-                <template is="rankList" data="{{...itemList}}" />
-              </li>
+              <scroll-view scroll-y style="height:800rpx" bindscroll="scroll" scroll-into-view="{{toMemberRankItem}}" scroll-top="{{scrollTop}}">
+                <!-- <view class="li myranklocation" wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id">
+                  <template is="rankList" data="{{...itemList}}" />
+                </view> -->
+                <template is="rankList" wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id" data="{{mymemberId, ...itemList}}"></template>
+                <!-- <view class="li myranklocation" wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id">
+                  <template is="rankList" data="{{...itemList}}" />
+                </view> -->
+              </scroll-view>
             </ol>
           </view>
         </view>
       </swiper-item>
+      <swiper-item>
+        <view style='padding-top:0.5rem;padding-bottom:1rem;text-align:center'>
+          <view class="rankBoard" style='margin-bottom:0.5rem'>
+            <view class='header'>
+              <label>年度排行榜</label>
+            </view>
+            <ol>
+              <scroll-view scroll-y style="height:800rpx" bindscroll="scroll" scroll-into-view="{{toMemberRankItem}}" scroll-top="{{scrollTop}}">
+                <!-- <view class="li myranklocation" wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id">
+                  <template is="rankList" data="{{...itemList}}" />
+                </view> -->
+                <template is="rankList" wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id" data="{{mymemberId, ...itemList}}"></template>
+                <!-- <view class="li myranklocation" wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id">
+                  <template is="rankList" data="{{...itemList}}" />
+                </view> -->
+              </scroll-view>
+              <!-- <li wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id">
+                <template is="rankList" data="{{...itemList}}" />
+              </li> -->
+            </ol>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- <view>
+    <swiper current="{{currentTab}}" duration="300" style="height: 35rem">
       <swiper-item>
         <view style='padding-top:0.5rem;padding-bottom:1rem;text-align:center'>
           <view class="rankBoard" style='margin-bottom:0.5rem'>
@@ -54,16 +89,35 @@
           </view>
         </view>
       </swiper-item>
+      <swiper-item>
+        <view style='padding-top:0.5rem;padding-bottom:1rem;text-align:center'>
+          <view class="rankBoard" style='margin-bottom:0.5rem'>
+            <view class='header'>
+              <label>
+                年度排行榜
+              </label>
+            </view>
+            <ol>
+              <li wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id">
+                <template is="rankList" data="{{...itemList}}" />
+              </li>
+            </ol>
+          </view>
+        </view>
+      </swiper-item>
     </swiper>
-  </view>
+  </view> -->
 </view>
-
 <template name="rankList">
+  <view class="li {{mymemberId == memberId ? 'myranklocation':''}}" id="P{{memberId}}">
+    <view class='mark'>{{memberName}}</view>
+    <view class='small'>{{totalProfit}}元</view>
+  </view>
+</template>
+<!-- <template name="rankList">
   <view class='mark'>{{memberName}}</view>
   <view class='small'>{{totalProfit}}元</view>
-</template>
-
-
+</template> -->
 <!-- <view style='padding-top:0.5rem;padding-bottom:1rem;text-align:center'>
     <view class="rankBoard" style='margin-bottom:0.5rem'>
       <view class='header'>
@@ -99,10 +153,7 @@
       </ol>
     </view>
   </view> -->
-
-
-<!-- 
-<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" bindscroll="scroll">
+<!-- <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" bindscroll="scroll">
 
   <view wx:for="{{dataList}}" wx:for-item="itemList" wx:key="item.id">
     <template is="rankList" data="{{...itemList}}" />

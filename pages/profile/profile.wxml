@@ -165,10 +165,10 @@
               <radio checked="true" value="WECHAT" />
               <label style='position:relative; top:0.1rem'>微信支付</label>
             </label>
-            <label style='margin-left:2rem'>
+            <!-- <label style='margin-left:2rem'>
               <radio value="YUE" />
               <label style='position:relative; top:0.1rem'>余额支付</label>
-            </label>
+            </label> -->
           </radio-group>
         </view>
       </view>

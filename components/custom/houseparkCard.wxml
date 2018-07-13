@@ -1,16 +1,22 @@
 <template name="houseparkCard">
        <view class="card">
 		<view class="cardheader card__content">
-			<image style="" mode="" src="{{filepath + item.houseparkImageFileId}}" binderror="" bindload=""></image>
+			<image style="" mode="" src="{{filepath + item.houseparkRecycleSpotInfo.houseparkImageFileId}}" binderror="" bindload=""></image>
 			<view class="card__body">
 				<view class='card__body_name'>
 					小区信息
 				</view>
 				<view class='card_body_title'>
-					<label>{{item.houseparkName}}</label>
+					<label>{{item.houseparkRecycleSpotInfo.houseparkName}}</label>
 				</view>
 				<view class='card_body_sub_title'>
-					<label>{{item.areaname}}</label>
+					<label>{{item.houseparkRecycleSpotInfo.areaname}}</label>
+				</view>
+				<view hidden="{{item.recycleDateList == null || item.recycleDateList.length == 0? true:false}}" class='card_body_text'>
+            <template is="dateItem" wx:for="{{item.recycleDateList}}" wx:for-item="itemdate" wx:key="itemdate.id" data="{{itemdate}}"></template>
+				</view>
+				<view hidden="{{item.recycleDateList == null || item.recycleDateList.length == 0? false:true}}" class='card_body_text'>
+				      <label>等待安排回收时间</label>
 				</view>
 	    </view>
 	    </view>
@@ -21,14 +27,19 @@
 			<span class="card__date__month">{{month}}月</span>
 		</view>
 
-		<view class='card_more_extent'>
-			<label>时间: {{item.fromTime == null? '08:00': item.fromTime }} - {{item.endTime == null? '18:00': item.endTime }}</label>
+		<view class="card__week">
+			<span class="card__date__week">{{weekDay}}</span>
 		</view>
 
-	    <view class="card__footer">
+	    <!-- <view class="card__footer">
 				<view class="icon ion-clock"></view> 小区已进驻
 				<view class="icon ion-chatbox"></view> 1年
-		</view>
+		</view> -->
 
 	   </view>
+</template>
+
+
+<template name="dateItem">
+    <ol>{{itemdate.day}}号-{{itemdate.weekday}}: {{itemdate.fromTime }} - {{itemdate.toTime}}</ol>
 </template>

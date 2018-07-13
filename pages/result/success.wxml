@@ -12,5 +12,20 @@
     </view>
   </view>
 
+
+    <view class='returnPrimaryPage' bindtap='returnPrimaryPage'>
+     <label>返回首页</label>
+    </view>
+
+
+
+    <view class='toPackageDetailPage' bindtap='toPackageDetailPage'>
+     <label>前往订单页, 查看详情</label>
+    </view>
+
+
+
+
+
   <!-- <view class='wk-vertical-divide'></view> -->
 </view>

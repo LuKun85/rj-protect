@@ -1,62 +1,61 @@
 {
-  "pages": [
-    "pages/primary/primary",
-    "pages/appointment/appointment",
-    "pages/appointment/appointmentTabPage",
-    "pages/circle/circle",
-    "pages/reuse/reuse",
-    "pages/login/loginSwitch",
-    "pages/login/login",
-    "pages/data/data",
-    "pages/rank/rank",
-    "pages/map/classifymap",
-    "pages/circle/publishCircle",
-    "pages/profile/newAddress",
-    "pages/profile/address",
-    "pages/result/fail",
-    "pages/temp/category",
-    "pages/result/success",
-    "pages/temp/welcome",
-    "pages/primary/rankPage",
-    "pages/primary/recycleSpotPage",
-    "pages/login/signup",
-    "pages/profile/mypackage",
-    "pages/profile/packageDetail",
-    "pages/primary/pricePage",
-    "pages/primary/recycleDate",
-    "pages/profile/profile"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#00CD66",
-    "navigationBarTitleText": "融久环保小程序",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": false
-  },
-  "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/primary/primary",
-        "iconPath": "assets/images/tabbar/primary.png",
-        "selectedIconPath": "assets/images/tabbar/primary_s.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/appointment/appointmentTabPage",
-        "iconPath": "assets/images/tabbar/reuse.png",
-        "selectedIconPath": "assets/images/tabbar/reuse_s.png",
-        "text": "预约回收"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "iconPath": "assets/images/tabbar/profile.png",
-        "selectedIconPath": "assets/images/tabbar/profile_s.png",
-        "text": "个人"
-      }
-    ]
-  }
+    "pages": [
+        "pages/primary/primary",
+        "pages/appointment/appointmentTabPage",
+        "pages/circle/circle",
+        "pages/reuse/reuse",
+        "pages/login/loginSwitch",
+        "pages/login/login",
+        "pages/data/data",
+        "pages/rank/rank",
+        "pages/map/classifymap",
+        "pages/circle/publishCircle",
+        "pages/profile/newAddress",
+        "pages/profile/address",
+        "pages/result/fail",
+        "pages/temp/category",
+        "pages/profile/mypackage",
+        "pages/result/success",
+        "pages/temp/welcome",
+        "pages/primary/recycleSpotPage",
+        "pages/login/signup",
+        "pages/profile/packageDetail",
+        "pages/primary/pricePage",
+        "pages/primary/recycleDate",
+        "pages/profile/profile",
+        "pages/primary/rankPage",
+        "pages/appointment/appointment"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#00CD66",
+        "navigationBarTitleText": "融久环保小程序",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [{
+                "pagePath": "pages/primary/primary",
+                "iconPath": "assets/images/tabbar/primary.png",
+                "selectedIconPath": "assets/images/tabbar/primary_s.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/appointment/appointmentTabPage",
+                "iconPath": "assets/images/tabbar/reuse.png",
+                "selectedIconPath": "assets/images/tabbar/reuse_s.png",
+                "text": "预约回收"
+            },
+            {
+                "pagePath": "pages/profile/profile",
+                "iconPath": "assets/images/tabbar/profile.png",
+                "selectedIconPath": "assets/images/tabbar/profile_s.png",
+                "text": "个人"
+            }
+        ]
+    }
 }

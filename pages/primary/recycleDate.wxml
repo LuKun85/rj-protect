@@ -6,7 +6,9 @@
       <view class="searchBox">
         <input class="searchInput" placeholder='请输入小区所在位置' maxlength='10' bindinput="enterSearchCondition">
         </input>
-        <button class="searchIcon buttom-no-margin-padding" bindtap='searchHouseparkRecycle'><span>搜索</span></button>
+        <button class="searchIcon buttom-no-margin-padding" bindtap='searchHouseparkRecycle'>
+          <span><label style="margin:auto; display:inline-block">搜索</label></span>
+        </button>
       </view>
       <!-- <view class="chooseSearchBoard">
             <scroll-view class='scroll-view' scroll-y="true" >
@@ -18,10 +20,13 @@
     </view>
   </view>
 
+  <view style="min-height:40rpx;"></view>
+
+
   <import src="../../components/custom/houseparkCard.wxml" />
  
   <view>
-    <template wx:for="{{recycleList}}" wx:for-item="item" wx:key="item.id" is="houseparkCard" data="{{item, month, filepath}}" />
+    <template wx:for="{{recycleList}}" wx:for-item="item" wx:key="item.id" is="houseparkCard" data="{{item, month, filepath, weekDay}}" />
   </view>
 
 </view>

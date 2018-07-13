@@ -41,22 +41,28 @@ App({
                     authCode: code
                 };
                 server.GET(server.api.getOpenId, params).then(res => {
-                    console.info("res=", res)
-                    if ('000000' == res.respCode) {
-                        getApp().globalData.memberId = res.responseBody.memberId;
-                        getApp().globalData.realFlag = res.responseBody.realFlag;
-
-                        console.info('全局变量=', getApp().globalData)
-                        wx.setStorageSync("memberInfo", res.responseBody)
-                    } else {
-                        wx.showToast({
-                            title: res.respMsg,
-                            icon: 'none',
-                            mask: true
-                        })
-                    }
-                })
+                        console.info("res=", res)
+                        if ('000000' == res.respCode) {
+                            getApp().globalData.memberId = res.responseBody.memberId;
+                            getApp().globalData.realFlag = res.responseBody.realFlag;
+                            getApp().globalData.memberPhoneNumber = res.responseBody.memberPhoneNumber;
+                            // 如果已经实名制 就直接登录
+                            if (res.responseBody.realFlag == 'Y') {
+                                getApp().globalData.loginStatus = 'Y';
+                            }
+                        } else {
+                            wx.showToast({
+                                title: res.respMsg,
+                                icon: 'none',
+                                mask: true
+                            })
+                        }
+                    })
+                    //登录结束 
+                wx.hideLoading();
             }).catch(res => {
+            //登录异常
+            wx.hideLoading();
             wx.showToast({
                 title: res.respMsg,
                 icon: 'none',
@@ -66,6 +72,8 @@ App({
     },
 
     globalData: {
-        memberId: ''
+        memberId: '',
+        realFlag: '',
+        loginStatus: ''
     }
 })

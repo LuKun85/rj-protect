@@ -1,316 +1,322 @@
 /*--------------------
 my-package-board
 --------------------*/
+
 .my-package-board {
-  display: inline-block;
-  width: 96%;
-  margin-left: 2%;
-  margin-right: 2%;
-  text-align: center;
-  /* -webkit-transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+    /* -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); */
-  background: -webkit-linear-gradient(top, #3a404d, #181c26);
-  background: linear-gradient(to bottom, #3a404d, #181c26);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
+    background: -webkit-linear-gradient(top, #3a404d, #181c26);
+    background: linear-gradient(to bottom, #3a404d, #181c26);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
 }
+
 .my-package-board .header {
-  font-size: 18px;
-  color: #e1e1e1;
-  padding: 12px 13px 18px;
+    font-size: 18px;
+    color: #e1e1e1;
+    padding: 12px 13px 18px;
 }
+
 .my-package-board .header .svg {
-  width: 25px;
-  height: 26px;
-  position: relative;
-  top: 3px;
-  margin-right: 6px;
-  vertical-align: baseline;
+    width: 25px;
+    height: 26px;
+    position: relative;
+    top: 3px;
+    margin-right: 6px;
+    vertical-align: baseline;
 }
-
-
 
 .my-package-board ol {
-  counter-reset: my-package-board;
+    counter-reset: my-package-board;
 }
+
 .my-package-board ol li {
-  display: inline-block;
-  width: 80%;
-  position: relative;
-  z-index: 1;
-  font-size: 14px;
-  counter-increment: my-package-board;
-  padding: 18px 10px 18px 50px;
-  cursor: pointer;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1, 1);
-          transform: translateZ(0) scale(1, 1);
+    display: inline-block;
+    width: 80%;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    counter-increment: my-package-board;
+    padding: 18px 10px 18px 50px;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    transform: translateZ(0) scale(1, 1);
 }
+
 .my-package-board ol li::before {
-  content: counter(my-package-board);
-  position: absolute;
-  z-index: 2;
-  top: 18px;
-  left: 15px;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  color: #c24448;
-  background: #fff;
-  border-radius: 20px;
-  text-align: center;
+    content: counter(my-package-board);
+    position: absolute;
+    z-index: 2;
+    top: 18px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #c24448;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
 }
+
 .my-package-board ol li .mark {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  height: 100%;
-  padding: 18px 10px 18px 50px;
-  margin: 0;
-  background: none;
-  color: #fff;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 18px 10px 18px 50px;
+    margin: 0;
+    background: none;
+    color: #fff;
 }
-.my-package-board ol li .mark::before, .my-package-board ol li .mark::after {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  bottom: -11px;
-  left: -9px;
-  border-top: 10px solid #c24448;
-  border-left: 0 solid transparent;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  opacity: 0;
-}
+
+.my-package-board ol li .mark::before,
 .my-package-board ol li .mark::after {
-  left: auto;
-  right: -9px;
-  border-left: none;
-  border-right: 0 solid transparent;
+    content: '';
+    position: absolute;
+    z-index: 1;
+    bottom: -11px;
+    left: -9px;
+    border-top: 10px solid #c24448;
+    border-left: 0 solid transparent;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    opacity: 0;
+}
+
+.my-package-board ol li .mark::after {
+    left: auto;
+    right: -9px;
+    border-left: none;
+    border-right: 0 solid transparent;
 }
 
 .my-package-board ol li .packageOutCode {
-  display: inline-block;
-  z-index: 3;
-  position: relative;
-  background: none;
-  color: #fff;
-  left: -110rpx;
+    display: inline-block;
+    z-index: 3;
+    position: relative;
+    background: none;
+    color: #fff;
+    left: -110rpx;
 }
 
-.my-package-board ol li .packageOutCode::before, .my-package-board ol li .packageOutCode::after {
-  content: '';
-  position: absolute;
-  z-index: 3;
-  bottom: -11px;
-  left: -9px;
-  border-top: 10px solid #c24448;
-  border-left: 0 solid transparent;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  opacity: 0;
-}
+.my-package-board ol li .packageOutCode::before,
 .my-package-board ol li .packageOutCode::after {
-  left: auto;
-  right: -9px;
-  border-left: none;
-  border-right: 0 solid transparent;
+    content: '';
+    position: absolute;
+    z-index: 3;
+    bottom: -11px;
+    left: -9px;
+    border-top: 10px solid #c24448;
+    border-left: 0 solid transparent;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    opacity: 0;
 }
 
+.my-package-board ol li .packageOutCode::after {
+    left: auto;
+    right: -9px;
+    border-left: none;
+    border-right: 0 solid transparent;
+}
 
 .my-package-board ol li .packageStatus {
-  display: inline-block;
-  z-index: 3;
-  position: relative;
-  background: none;
-  right: -110rpx;
+    display: inline-block;
+    z-index: 3;
+    position: relative;
+    background: none;
+    right: -110rpx;
 }
 
-.my-package-board ol li .packageStatus::before, .my-package-board ol li .packageStatus::after {
-  content: '';
-  position: absolute;
-  z-index: 3;
-  bottom: -11px;
-  left: -9px;
-  border-top: 10px solid #c24448;
-  border-left: 0 solid transparent;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  opacity: 0;
-}
+.my-package-board ol li .packageStatus::before,
 .my-package-board ol li .packageStatus::after {
-  left: auto;
-  right: -9px;
-  border-left: none;
-  border-right: 0 solid transparent;
+    content: '';
+    position: absolute;
+    z-index: 3;
+    bottom: -11px;
+    left: -9px;
+    border-top: 10px solid #c24448;
+    border-left: 0 solid transparent;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    opacity: 0;
 }
 
+.my-package-board ol li .packageStatus::after {
+    left: auto;
+    right: -9px;
+    border-left: none;
+    border-right: 0 solid transparent;
+}
 
 .my-package-board ol li .packageDetail {
-  display: none;
-  z-index: 3;
-  position: relative;
-  background: none;
-  background-color: none;
-  top: 30rpx;
-  line-height: 120rpx;
-  padding: 5rpx;
-  width: 100%;
+    display: none;
+    z-index: 3;
+    position: relative;
+    background: none;
+    background-color: none;
+    top: 30rpx;
+    line-height: 120rpx;
+    padding: 5rpx;
+    width: 100%;
 }
 
-.my-package-board ol li .packageDetail::before, .my-package-board ol li .packageDetail::after {
-  content: '';
-  position: absolute;
-  z-index: 3;
-  bottom: -11px;
-  left: -9px;
-  border-top: 10px solid #c24448;
-  border-left: 0 solid transparent;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  opacity: 0;
-}
+.my-package-board ol li .packageDetail::before,
 .my-package-board ol li .packageDetail::after {
-  left: auto;
-  right: -9px;
-  border-left: none;
-  border-right: 0 solid transparent;
+    content: '';
+    position: absolute;
+    z-index: 3;
+    bottom: -11px;
+    left: -9px;
+    border-top: 10px solid #c24448;
+    border-left: 0 solid transparent;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    opacity: 0;
 }
 
+.my-package-board ol li .packageDetail::after {
+    left: auto;
+    right: -9px;
+    border-left: none;
+    border-right: 0 solid transparent;
+}
 
-.packageDetail ul{
+.packageDetail ul {
     display: block;
     line-height: 50rpx;
     text-align: left;
 }
 
-.packageDetail ul .detailItem{
+.packageDetail ul .detailItem {
     display: inline-block;
     color: #fff
 }
 
-.packageDetail ul .detailItem .itemName{
+.packageDetail ul .detailItem .itemName {
     display: inline-block;
     color: #fff;
     width: 125rpx;
 }
 
-.packageDetail ul .detailItem .itemNamaShort{
+.packageDetail ul .detailItem .itemNamaShort {
     display: inline-block;
     color: #fff;
     width: 80rpx;
 }
 
-.packageDetail ul .detailItem .itemContentLong{
+.packageDetail ul .detailItem .itemContentLong {
     display: inline-block;
     color: #fff;
     width: 280rpx;
 }
 
-.packageDetail ul .detailItem .itemContentMax{
+.packageDetail ul .detailItem .itemContentMax {
     display: inline-block;
     color: #fff;
     width: 350rpx;
 }
 
-.packageDetail ul .detailItem .itemContentShort{
+.packageDetail ul .detailItem .itemContentShort {
     display: inline-block;
     color: #fff;
     width: 180rpx;
 }
 
-
-.packageDetail ul .checkMoreDetail{
+.packageDetail ul .checkMoreDetail {
     display: inline-block;
-    color: #FC9D9D;
-    float: right;
-
+    color: rgba(252, 15, 15, 0.932);
+    margin-left: 450rpx;
 }
 
-
-
-
-
-.packageDetail ul .packageId{
+.packageDetail ul .packageId {
     color: #fff
 }
 
-
-
-
 .my-package-board ol li .small {
-  position: relative;
-  z-index: 2;
-  display: block;
-  text-align: right;
+    position: relative;
+    z-index: 2;
+    display: block;
+    text-align: right;
 }
+
 .my-package-board ol li::after {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fa6855;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  opacity: 0;
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fa6855;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    opacity: 0;
 }
 
 .my-package-board ol li {
-  background: #e0574f;
-}
-.my-package-board ol li::after{
-  background: #e0574f;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+    background: #e0574f;
 }
 
-.my-package-board ol li .mark::before, .my-package-board ol li .mark::after {
-  border-top: 6px solid #ba4741;
-  bottom: -7px;
+.my-package-board ol li::after {
+    background: #e0574f;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
 }
 
-.my-package-board ol li .packageOutCode::before, .my-package-board ol li .packageOutCode::after {
-  border-top: 6px solid #ba4741;
-  bottom: -7px;
+.my-package-board ol li .mark::before,
+.my-package-board ol li .mark::after {
+    border-top: 6px solid #ba4741;
+    bottom: -7px;
 }
 
+.my-package-board ol li .packageOutCode::before,
+.my-package-board ol li .packageOutCode::after {
+    border-top: 6px solid #ba4741;
+    bottom: -7px;
+}
 
 .my-package-board ol li:first-child {
-  background: #fa6855;
+    background: #fa6855;
 }
+
 .my-package-board ol li:first-child::after {
-  background: #fa6855;
+    background: #fa6855;
 }
 
 .my-package-board ol li:hover {
-  overflow: visible;
-}
-.my-package-board ol li:hover::after {
-  opacity: 1;
-  -webkit-transform: scaleX(1.06) scaleY(1.03);
-          transform: scaleX(1.06) scaleY(1.03);
-}
-.my-package-board ol li:hover .mark::before, .my-package-board ol li:hover .mark::after {
-  opacity: 1;
-  -webkit-transition: all .35s ease-in-out;
-  transition: all .35s ease-in-out;
+    overflow: visible;
 }
 
-.my-package-board ol li:hover .packageOutCode::before, .my-package-board ol li:hover .packageOutCode::after {
-  opacity: 1;
-  -webkit-transition: all .35s ease-in-out;
-  transition: all .35s ease-in-out;
+.my-package-board ol li:hover::after {
+    opacity: 1;
+    -webkit-transform: scaleX(1.06) scaleY(1.03);
+    transform: scaleX(1.06) scaleY(1.03);
+}
+
+.my-package-board ol li:hover .mark::before,
+.my-package-board ol li:hover .mark::after {
+    opacity: 1;
+    -webkit-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+}
+
+.my-package-board ol li:hover .packageOutCode::before,
+.my-package-board ol li:hover .packageOutCode::after {
+    opacity: 1;
+    -webkit-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
 }
 
 .my-package-board ol li:hover .packageDetail {
-  display: block;
+    display: block;
 }
-
-
-

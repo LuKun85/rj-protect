@@ -38,7 +38,7 @@
         <view class='addressCell-item-hd'>
           <label>地区:</label>
         </view>
-        <view class='addressCell-item-bd' bindtap='showSelectCity'>
+        <view class='addressCell-item-bd' bindtap='showAddressCodeSelect'>
           <label>{{provinceName}}</label>
           <label style='margin-left:0.5rem'>{{cityName}}</label>
           <label style='margin-left:0.5rem'>{{areaName}}</label>
@@ -143,8 +143,7 @@
     </view>
     <view class='border'></view>
     
-    <picker-view indicator-style="height: 40px;" style="margin-top:0.2rem; width: 100%; height: 200px;" value="{{value}}" bindchange="bindAddressCodeChange">
-
+    <picker-view indicator-style="height: 40px;" style="margin-top:0.2rem; width: 100%; height: 200px;" value="{{value}}" bindchange="doAddressCodeSelect">
       <picker-view-column>
         <view wx:for="{{provinceList}}" wx:key="{{item.code}}" style="line-height: 50px">{{item.name}}</view>
       </picker-view-column>
@@ -170,15 +169,14 @@
       <view style='margin: 0.5rem 0 0.5rem 0'>
         <label style='font-size:17px; margin:1rem'>
         </label>
-        <label style='float:right; font-size:17px; margin-right:1rem;' bindtap='ensureAddressCodeSelect'>
+        <label style='float:right; font-size:17px; margin-right:1rem;' bindtap='ensureHouseparkCodeSelect'>
           确定
         </label>
       </view>
     </view>
     <view class='border'></view>
     
-    <picker-view indicator-style="height: 40px;" style="margin-top:0.2rem; width: 100%; height: 200px;" value="{{houseParkValue}}" bindchange="bindHouseparkCodeChange">
-
+    <picker-view indicator-style="height: 40px;" style="margin-top:0.2rem; width: 100%; height: 200px;" value="{{houseParkValue}}" bindchange="doHouseparkCodeChange">
       <picker-view-column>
         <view wx:for="{{houseparkList}}" wx:key="{{item.code}}" style="line-height: 50px">{{item.name}}</view>
       </picker-view-column>

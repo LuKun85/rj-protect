@@ -1,21 +1,67 @@
 /* pages/result/success.wxss */
 
 .success {
-  display: block;
-  width: 6rem;
-  height: 6rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0.2rem;
-  border-radius: 50%;
-  background-image: -webkit-gradient(linear, left top, right top, from(#28834C), to(#8ADCAA));
-  background-image: -webkit-linear-gradient(left, #28834C 0, #8ADCAA 100%);
-  background-image: linear-gradient(90deg, #28834C 0, #8ADCAA 100%);
-  box-shadow:5px 2px 6px #000;
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.2rem;
+    border-radius: 50%;
+    background-image: -webkit-gradient(linear, left top, right top, from(#28834C), to(#8ADCAA));
+    background-image: -webkit-linear-gradient(left, #28834C 0, #8ADCAA 100%);
+    background-image: linear-gradient(90deg, #28834C 0, #8ADCAA 100%);
+    box-shadow: 0px 0px 20px #000;
 }
 
-
 .message {
-  color: white;
-  font-size: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.toPackageDetailPage {
+    margin-top: 50rpx;
+    text-align: center;
+    line-height: 50rpx;
+}
+
+.toPackageDetailPage label {
+    font-size: 12px;
+    color: #ACACDC;
+}
+
+.toPackageDetailPage label:active,
+.toPackageDetailPage label:hover {
+    text-decoration: underline;
+    color: 151530;
+}
+
+.toPackageDetailPage label:after {
+    content: '';
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #151530;
+}
+
+.returnPrimaryPage {
+    text-align: center;
+    line-height: 50rpx;
+}
+
+.returnPrimaryPage label {
+    font-size: 12px;
+    color: #ACACDC;
+}
+
+.returnPrimaryPage label:active,
+.returnPrimaryPage label:hover {
+    text-decoration: underline;
+    color: 151530;
+}
+
+.returnPrimaryPage label:after {
+    content: '';
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #151530;
 }

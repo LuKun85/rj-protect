@@ -13,9 +13,6 @@
     </label>
     </view>
     <ol>
-<!--       <li>
-        <template is="mypackageItem" data="{{item}}" />
-      </li> -->
 
       <li wx:for="{{myPackageList}}" wx:for-item="item" wx:key="item.id">
            <template is="mypackageItem" data="{{...item}}" />

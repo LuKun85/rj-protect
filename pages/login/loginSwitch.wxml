@@ -15,7 +15,7 @@
 
     <view class='returnPrimaryPage' bindtap='returnPrimaryPage'>
      <label>返回首页</label>
-  </view>
+    </view>
 
   <view class="weui-footer">
     <view class="weui-footer_fixed-bottom">

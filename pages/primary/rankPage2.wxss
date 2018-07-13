@@ -34,7 +34,7 @@ rankBoard
     counter-reset: rankBoard;
 }
 
-.rankBoard ol li {
+.rankBoard ol .li {
     display: inline-block;
     width: 80%;
     position: relative;
@@ -49,7 +49,7 @@ rankBoard
     transform: translateZ(0) scale(1, 1);
 }
 
-.rankBoard ol li::before {
+.rankBoard ol .li::before {
     content: counter(rankBoard);
     position: absolute;
     z-index: 2;
@@ -64,7 +64,7 @@ rankBoard
     text-align: center;
 }
 
-.rankBoard ol li .mark {
+.rankBoard ol .li .mark {
     position: absolute;
     z-index: 2;
     top: 0;
@@ -76,8 +76,8 @@ rankBoard
     color: #fff;
 }
 
-.rankBoard ol li .mark::before,
-.rankBoard ol li .mark::after {
+.rankBoard ol .li .mark::before,
+.rankBoard ol .li .mark::after {
     content: '';
     position: absolute;
     z-index: 1;
@@ -90,21 +90,21 @@ rankBoard
     opacity: 0;
 }
 
-.rankBoard ol li .mark::after {
+.rankBoard ol .li .mark::after {
     left: auto;
     right: -9px;
     border-left: none;
     border-right: 0 solid transparent;
 }
 
-.rankBoard ol li .small {
+.rankBoard ol .li .small {
     position: relative;
     z-index: 2;
     display: block;
     text-align: right;
 }
 
-.rankBoard ol li::after {
+.rankBoard ol .li::after {
     content: '';
     position: absolute;
     z-index: 1;
@@ -119,26 +119,26 @@ rankBoard
     opacity: 0;
 }
 
-.rankBoard ol li {
+.rankBoard ol .li {
     background: #e0574f;
 }
 
-.rankBoard ol li::after {
+.rankBoard ol .li::after {
     background: #e0574f;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
 }
 
-.rankBoard ol li .mark::before,
-.rankBoard ol li .mark::after {
+.rankBoard ol .li .mark::before,
+.rankBoard ol .li .mark::after {
     border-top: 6px solid #ba4741;
     bottom: -7px;
 }
 
-.rankBoard ol li:first-child {
+.rankBoard ol .li:first-child {
     background: #fa6855;
 }
 
-.rankBoard ol li:first-child::after {
+.rankBoard ol .li:first-child::after {
     background: #fa6855;
 }
 
@@ -201,19 +201,19 @@ rankBoard
   border-bottom: 8px solid #993639;
 } */
 
-.rankBoard ol li:hover {
+.rankBoard ol .li:hover {
     z-index: 2;
     overflow: visible;
 }
 
-.rankBoard ol li:hover::after {
+.rankBoard ol .li:hover::after {
     opacity: 1;
     -webkit-transform: scaleX(1.06) scaleY(1.03);
     transform: scaleX(1.06) scaleY(1.03);
 }
 
-.rankBoard ol li:hover .mark::before,
-.rankBoard ol li:hover .mark::after {
+.rankBoard ol .li:hover .mark::before,
+.rankBoard ol .li:hover .mark::after {
     opacity: 1;
     -webkit-transition: all .35s ease-in-out;
     transition: all .35s ease-in-out;
@@ -240,4 +240,14 @@ rankBoard
     border-bottom-style: solid;
     border-bottom-width: thin;
     border-bottom-color: #151530;
+}
+
+.myranklocation {
+    box-shadow: 0 0 1rem #e1e1e1;
+    z-index: 2;
+    overflow: visible;
+    opacity: 1;
+    -webkit-transform: scaleX(1.06) scaleY(1.03);
+    transform: scaleX(1.06) scaleY(1.03);
+    background: #09f097 !important;
 }

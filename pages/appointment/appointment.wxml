@@ -1,6 +1,6 @@
 <view class='appointmentPage'>
   <!-- 个人信息 -->
-  <view class='wk-box wk-no-padding wk-no-margin'>
+  <view class='wk-box wk-no-padding'>
     <view class='wk-cells-noline wk-no-margin wk-no-padding'>
       <view class='orderMember'>
         <open-data class="orderMemberHeadIcon" type="userAvatarUrl"></open-data>
@@ -16,24 +16,27 @@
     </view>
   </view>
 
+  <view style="min-height:20rpx;"></view>
+
   <!-- 订单信息 -->
-  <view class='wk-box wk-no-padding wk-no-margin' style='margin-top:0.5rem'>
+  <view class='wk-box wk-no-padding box-background'>
     <!-- 地址 -->
     <view class='wk-cells-noline wk-no-margin wk-no-padding'>
       <view class='wk-cell'>
-        <view class='wk-cell-title'> 订单信息
-        </view>
-        <view class='wk-vertical-divide'></view>
-        <view class='wk-cell-body'>
+         <label class="box-title"> 订单信息</label>
+      </view>
+      <view>
+      </view>
+    </view>
+    <view class='wk-vertical-divide'></view>
+    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+      <view class='wk-cell'>
+        <view class='wk-cell-body cell-height'>
           <view class='wk-cell-body-hd'>
-            地址信息:
+            <label>地址信息:</label>
           </view>
           <view class='wk-cell-body-bd'>
             {{memberDefaultAddress}}
-          </view>
-          <view class='wk-cell-body-ft'>
-<!--             <image class='icon' src='../../assets/images/change.png'>
-            </image> -->
           </view>
         </view>
       </view>
@@ -42,7 +45,7 @@
     </view>
 
     <!-- 日期 -->
-    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+    <view class='wk-cells-noline wk-no-padding'>
       <view class='wk-cell'>
         <view class='wk-vertical-divide'></view>
         <view class='wk-cell-body'>
@@ -50,8 +53,8 @@
             预约日期:
           </view>
           <view class='wk-cell-body-bd'>
-            <picker mode="date" value="{{appointmentFromDate}}" start="{{datePickStart}}" end="{{datePickEnd}}" bindchange="bindDateChange">
-              <view class="weui-input">{{appointmentFromDate}}</view>
+            <picker style="display:inline-block; height:100%; width:100%"range="{{houseparkRecycleDateList}}" value="{{dateIndex}}" range-key='recycleDate' bindtap="getHouseparkRecycleDate" bindchange="bindDateChange">
+              <view class="weui-input">选择回收日期--{{appointmentFromDate}}</view>
             </picker>
           </view>
         </view>
@@ -61,26 +64,17 @@
     </view>
 
     <!-- 时间 -->
-    <view class='wk-cells-noline wk-no-margin wk-no-padding'>
+    <view class='wk-cells-noline wk-no-padding'>
       <view class='wk-cell'>
         <view class='wk-vertical-divide'></view>
         <view class='wk-cell-body'>
           <view class='wk-cell-body-hd'>
             预约时间:
           </view>
-          <view class='wk-cell-body-bd' style='width: 75%;'>
-             <view class='appointmentTimeBox'>
-                <label>开始</label>
-                 <picker mode="time" id='from' value="{{appointmentFromTime}}" start="{{timePickStart}}" end="{{timePickEnd}}" bindchange="bindFromTimeChange">
-              <view class="weui-input">{{appointmentFromTime}}</view>
+          <view class='wk-cell-body-bd'>
+            <picker range="{{houseparkRecycleTimeList}}" value="{{timeIndex}}" range-key='chooseContent' bindchange="bindTimeChange">
+              <view class="weui-input">选择回收时间--{{appointmentTimeRange}}</view>
             </picker>
-             </view>
-             <view  class='appointmentTimeBox'>
-                <label>结束</label>
-                 <picker mode="time" id='to' value="{{appointmentToTime}}" start="{{appointmentStartTime}}" end="{{appointmentEndTime}}" bindchange="bindToTimeChange">           
-              <view class="weui-input">{{appointmentToTime}}</view>
-               </picker>
-             </view>
           </view>
         </view>
       </view>
@@ -91,7 +85,7 @@
 
 
   <!-- 袋子信息 -->
-  <view class='wk-box wk-no-padding wk-no-margin' style='margin-top:0.5rem'>
+  <view class='wk-box wk-no-padding box-background'>
     <!-- 袋子编码 -->
     <view class='wk-cells-noline wk-no-margin wk-no-padding'>
       <view class='wk-cell'>
@@ -180,7 +174,7 @@
 
 
   <!-- 备注信息 -->
-  <view class='wk-box wk-no-padding wk-no-margin' style='margin-top:0.5rem'>
+  <view class='wk-box wk-no-padding box-background'>
     <!-- 盘点方式 -->
     <view class='wk-cells-noline wk-no-margin wk-no-padding'>
       <view class='wk-cell'>
