@@ -67,7 +67,8 @@
     </view>
     <view class='border' />
   </view>
-
+  
+<!-- 
   <view class='addressCell'>
     <view class='addressCell'>
       <view class='addressCell-item'>
@@ -80,7 +81,7 @@
       </view>
     </view>
     <view class='border' />
-  </view>
+  </view> -->
 
   <view class='addressCell'>
     <view class='addressCell'>

@@ -1,7 +1,17 @@
-<!--pages/temp/welcome.wxml-->
+<!-- pages/temp/welcome.wxml -->
 <view>
-
-  <view>
+  <view class="newsItemBox">
+    <view style="margin-top:20rpx; margin-bottom:20rpx">
+      <view class="imageTitleBox">
+        <image mode="scaleToFill" src="../../assets/images/lunbo/lunbo1.png" />
+      </view>
+      <view class="imageContentBox">
+        <label class="newsTitle">融久会员</label>
+        <label class="newsSubTitle">融久会员融久会员融久会员融久会员融久会员融久会员融久会员融久会员</label>
+      </view>
+    </view>
+  </view>
+  <!-- <view>
     ABCD
   </view>
 
@@ -23,6 +33,5 @@
                 <image mode='' src='../../assets/images/lunbo/lunbo1.png'></image>
         </swiper-item>
       </scroll-view>
-  </view>
-
+  </view> -->
 </view>

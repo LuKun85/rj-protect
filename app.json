@@ -1,8 +1,10 @@
 {
     "pages": [
         "pages/primary/primary",
+        "pages/result/success",
         "pages/appointment/appointmentTabPage",
         "pages/circle/circle",
+        "pages/profile/profile",
         "pages/reuse/reuse",
         "pages/login/loginSwitch",
         "pages/login/login",
@@ -10,32 +12,32 @@
         "pages/rank/rank",
         "pages/map/classifymap",
         "pages/circle/publishCircle",
-        "pages/profile/newAddress",
         "pages/profile/address",
         "pages/result/fail",
         "pages/temp/category",
         "pages/profile/mypackage",
-        "pages/result/success",
         "pages/temp/welcome",
+        "pages/primary/pricePage",
         "pages/primary/recycleSpotPage",
         "pages/login/signup",
         "pages/profile/packageDetail",
-        "pages/primary/pricePage",
         "pages/primary/recycleDate",
-        "pages/profile/profile",
         "pages/primary/rankPage",
-        "pages/appointment/appointment"
+        "pages/appointment/appointment",
+        "pages/profile/newAddress",
+        "pages/webview/outweb",
+        "pages/webview/gonglve"
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#00CD66",
+        "navigationBarBackgroundColor": "#17dbc1",
         "navigationBarTitleText": "融久环保小程序",
         "navigationBarTextStyle": "black",
         "enablePullDownRefresh": false
     },
     "tabBar": {
         "color": "#7A7E83",
-        "selectedColor": "#3cc51f",
+        "selectedColor": "#17dbc1",
         "borderStyle": "black",
         "backgroundColor": "#ffffff",
         "list": [{

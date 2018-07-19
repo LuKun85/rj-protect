@@ -60,7 +60,7 @@ Page({
 
         var getTime = setInterval(function() {
             var now = new Date();
-            var time = now.getHours() + ":" + now.getMinutes() +
+            var time = todayDate + " - " + now.getHours() + ":" + now.getMinutes() +
                 ":" + now.getSeconds()
             that.setData({
                 nowTime: time

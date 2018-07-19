@@ -1,0 +1,2 @@
+<!--pages/webview/gonglve.wxml-->
+<web-view src="http://oa.rongjiuhuanbao.com/gonglv/gonglv.html"></web-view>

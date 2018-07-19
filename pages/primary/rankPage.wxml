@@ -1,6 +1,6 @@
 <!-- pages/rank/rank.wxml -->
 <view style='overflow-x:hidden'>
-  <view style='text-align:center; padding: 1rem 0 1rem 0'>
+  <!-- <view style='text-align:center; padding: 1rem 0 1rem 0'>
     <view class="envato-animate">
       <view class="envato-balloon">W</view>
       <view class="envato-balloon">e</view>
@@ -10,10 +10,10 @@
       <view class="envato-balloon">m</view>
       <view class="envato-balloon">e</view>
     </view>
-  </view>
-  <view class='tomyranklocation' bindtap='goToMyRankLocation'>
+  </view> -->
+  <!-- <view class='tomyranklocation' bindtap='goToMyRankLocation'>
     <label>我的位置</label>
-  </view>
+  </view> -->
   <view>
     <view class="swiper-tab">
       <view class="swiper-tab-item {{currentTab== '0'?'active':''}}" data-current="0" bindtap="clickTab">
@@ -24,6 +24,11 @@
       </view>
     </view>
   </view>
+
+  <view class='tomyranklocation' bindtap='goToMyRankLocation'>
+    <label>查看我的排行</label>
+  </view>
+
   <view>
     <swiper current="{{currentTab}}" duration="300" style="height: 35rem">
       <swiper-item>

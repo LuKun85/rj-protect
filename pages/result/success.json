@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "结果",
-  "navigationBarBackgroundColor": "#00CD66",
-  "enablePullDownRefresh": true
+    "navigationBarTitleText": "结果",
+    "navigationBarBackgroundColor": "#17dbc1",
+    "enablePullDownRefresh": true
 }

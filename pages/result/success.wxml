@@ -19,13 +19,9 @@
 
 
 
-    <view class='toPackageDetailPage' bindtap='toPackageDetailPage'>
-     <label>前往订单页, 查看详情</label>
+    <view class='toPackageDetailPage' hidden="{{returnLinkMessageHidden}}" bindtap='gotoAnotherPage'>
+        <label>{{returnLinkMessage}}</label>
     </view>
-
-
-
-
 
   <!-- <view class='wk-vertical-divide'></view> -->
 </view>

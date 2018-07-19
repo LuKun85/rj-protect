@@ -1,7 +1,7 @@
 <view>
 
   <view style='display:block; width:100%;'>
-    <image class="loginPageTopImg" src='../../assets/images/lunbo/lunbo3.png'> </image>
+    <image class="loginPageTopImg" src='{{registPicUrl}}'> </image>
   </view>
 
   <view class="weui-cells weui-cells_after-title">

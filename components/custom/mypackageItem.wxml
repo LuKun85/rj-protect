@@ -5,20 +5,18 @@
 
     -->
 
-   <label class="packageOutCode"> 袋子编号: {{packageOutCode}} </label>
-   <label class="packageStatus"> {{packageStatusDesc}} </label>
+   <label class="packageOutCode"> 袋子编号: {{packageOutCode == null? packageOutCodePool: packageOutCode}} </label>
+   <label class="packageStatus"> {{appointmentOrderStatusDesc}} </label>
 
    <view class="packageDetail"> 
         <ul>
-
          <view class="detailItem">
-         <view class="checkMoreDetail" bindtap="getMypackageDetail" data-id="{{packageId}}">
+         <view class="checkMoreDetail" bindtap="getMypackageDetail" data-id="{{packageId}}" style="display: {{appointmentOrderNo == null || appointmentOrderNo == undefined || appointmentOrderNo =='' ? 'none':''}}">
             查看详情
          </view> 
          </view> 
-
         </ul>
-   	  <ul>
+   	  <!-- <ul>
    	  	 <view class="detailItem">
    	  	 	<label class="itemName">
    	  	 		预约单号:
@@ -27,7 +25,7 @@
    	  	 		{{appointmentOrderNo}}
    	  	 	</label>
          </view> 
-   	  </ul>
+   	  </ul> -->
    	  <ul>
    	  	 <view class="detailItem">
    	  	 	<label class="itemName">
@@ -54,7 +52,7 @@
    	  	 	</label>
          </view> 
    	  </ul>
-   	  <ul>
+   	  <!-- <ul>
    	  	 <view class="detailItem">
    	  	 	<label class="itemName">
    	  	 		位置:
@@ -62,7 +60,7 @@
    	  	 	<label class="itemContentLong">
    	  	 	</label>
          </view> 
-   	  </ul>
+   	  </ul> -->
    </view>
 
 </template>

@@ -6,10 +6,11 @@
       <view class='locationName'>{{locationCity}}</view>
     </view>
     <view style='display:inline-block;width:30%'>
-      <button hidden="{{loginStatus == 'Y' ? true : false}}" bindtap="showLoginPage" class='loginStatus'>未登录</button>
+      <button hidden="{{loginStatus == 'Y' ? true : false}}" bindtap="showLoginPage" class='loginStatus'>
+        未登录
+      </button>
     </view>
   </view>
-
   <view class='memberInfoBar'>
     <open-data class="memberHeadIcon" type="userAvatarUrl"></open-data>
     <open-data class="memberName" type="userNickName"></open-data>
@@ -19,7 +20,6 @@
       <label class='integral'>信誉值:{{memberInfo.memberIntegarl}}</label>
     </view>
   </view>
-
   <view class='assetsBar'>
     <view class='weui-flex' style='height:100%; align-items:center;'>
       <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
@@ -29,15 +29,13 @@
           <view class='info'>{{memberInfo.postTotalTimes}}次</view>
         </view>
       </view>
-
       <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
         <view style='display:inline-block;height:100%; width:100%'>
           <image src='../../assets/images/profile/postTotalWeight.png' class='icon'></image>
           <view class='desc'>总重量</view>
-          <view class='info'>{{memberInfo.postTotalWeight}}公斤</view>
+          <view class='info'>{{memberInfo.postTotalWeight}}市斤</view>
         </view>
       </view>
-
       <!-- <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
         <view style='display:inline-block;height:100%; width:100%'>
           <image src='../../assets/images/profile/postTotalCount.png' class='icon'></image>
@@ -45,7 +43,6 @@
           <view class='info'>{{memberInfo.postTotalCount}}件</view>
         </view>
       </view> -->
-
       <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
         <view style='display:inline-block;height:100%; width:100%'>
           <image src='../../assets/images/profile/postTotalProfit.png' class='icon'></image>
@@ -53,7 +50,6 @@
           <view class='info'>{{memberInfo.postTotalProfit}}元</view>
         </view>
       </view>
-
       <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
         <view style='display:inline-block;height:100%; width:100%'>
           <image src='../../assets/images/profile/availableProfit.png' class='icon'></image>
@@ -61,19 +57,15 @@
           <view class='info'>{{memberInfo.availableProfit}}元</view>
         </view>
       </view>
-
     </view>
   </view>
-
   <view class="weui-grids">
     <a href="" class="weui-grid js_grid" bindtap="bindPackage">
       <button class='gridButton'>
         <view class="weui-grid__icon">
           <image src="../../assets/images/grid/scan.png" alt=""></image>
         </view>
-        <p class="weui-grid__label">
-          绑定袋子
-        </p>
+        <p class="weui-grid__label">绑定袋子</p>
       </button>
     </a>
     <a href="" class="weui-grid js_grid" bindtap="showShouYinTai">
@@ -86,7 +78,6 @@
         </p>
       </button>
     </a>
-
     <a href="" class="weui-grid js_grid" bindtap="showMemberPackageList">
       <button class='gridButton'>
         <view class="weui-grid__icon">
@@ -97,72 +88,52 @@
         </p>
       </button>
     </a>
-
-    <a href="" class="weui-grid js_grid">
+    <a href="" class="weui-grid js_grid" bindtap="showOutcomeDialog">
       <button class='gridButton'>
         <view class="weui-grid__icon">
           <image src="../../assets/images/grid/outcome.png" alt=""></image>
         </view>
-        <p class="weui-grid__label">
-          个人提现
-        </p>
+        <p class="weui-grid__label">个人提现</p>
       </button>
     </a>
-
     <a href="" class="weui-grid js_grid" bindtap="showMemberAddressList">
       <button class='gridButton'>
         <view class="weui-grid__icon">
           <image src="../../assets/images/grid/address.png" alt=""></image>
         </view>
-        <p class="weui-grid__label">
-          我的地址
-        </p>
+        <p class="weui-grid__label">我的地址</p>
       </button>
     </a>
-
     <a href="" class="weui-grid js_grid">
       <button open-type='contact' class='gridButton'>
         <view class="weui-grid__icon">
           <image src="../../assets/images/grid/service.png" alt=""></image>
         </view>
-        <p class="weui-grid__label">
-          客服
-        </p>
+        <p class="weui-grid__label">客服</p>
       </button>
     </a>
   </view>
-
-
-  <view class="commodity_screen" bindtap="hideShouYinTai" wx:if="{{showShouYinTaiStatus}}">
-
-  </view>
+  <view class="commodity_screen" bindtap="hideShouYinTai" wx:if="{{showShouYinTaiStatus}}"></view>
   <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showShouYinTaiStatus}}">
-
     <view class='payDescCell'>
       <view class='payDescCell_item'>
         <view class='payDescCell_item_hd'>
-          <label>
-            购买数量:
-          </label>
+          <label>购买数量:</label>
         </view>
         <view class='payDescCell_item_bd'>
           <slider min='0' max='10' step="1" show-value='true' block-size='14' value="{{applyPackageCount}}" bindchange="applyPackageCount" bindchanging='applyPackageCount' />
         </view>
       </view>
     </view>
-
-
     <view class='payDescCell'>
       <view class='payDescCell_item'>
         <view class='payDescCell_item_hd'>
-          <label>
-            支付方式:
-          </label>
+          <label>支付方式:</label>
         </view>
         <view class='payDescCell_item_bd'>
           <radio-group bindchange="payMethodRadioChange" style="margin-left:0.5rem;">
             <label>
-              <radio checked="true" value="WECHAT" />
+              <radio checked="true" value="WECHAT" style="backGround-clolr:#17dbc1"/>
               <label style='position:relative; top:0.1rem'>微信支付</label>
             </label>
             <!-- <label style='margin-left:2rem'>
@@ -173,27 +144,86 @@
         </view>
       </view>
     </view>
-
     <view class='payCell'>
       <view class='payCell_item'>
         <view style='display:inline-block; width: 70%'>
-          <label class='totalPriceText'>
-            总价:
-          </label>
-          <label class='totalPriceMoney'>
-            {{totalApplyPackagePrice}}
-          </label>
-          <label class='totalPriceMoney'>
-            元
-          </label>
+          <label class='totalPriceText'>总价:</label>
+          <label class='totalPriceMoney'>{{totalApplyPackagePrice}}</label>
+          <label class='totalPriceMoney'>元</label>
         </view>
         <view class='payButton' bindtap="payApplyPackage">
-          <label style=''>
-            支付
-          </label>
+          <label style=''>支付</label>
         </view>
       </view>
     </view>
   </view>
+  
+  <view class="commodity_screen" bindtap="hideOutcomeDialog" wx:if="{{enableOutcomeDialog}}"></view>
+  <view animation="{{animationData}}" class="outcome_dialog_box" wx:if="{{enableOutcomeDialog}}">
+    <view class="title">
+      <label>提现至微信零钱</label>
+    </view>
+    <view class="yueBox">
+      <!-- <ol>
+        <li>
+          <label class="yuan">￥</label>
+          <label class="yue_money">{{memberInfo.availableProfit}}</label>
+        </li>
+        <li>
+          <label class="desc">总余额</label>
+        </li>
+      </ol> -->
+      <ol>        
+        <li class="oldbrother">
+          <label class="yuan">￥</label>
+          <label class="yue_money">{{memberInfo.availableProfit}}</label>
+        </li>
+        <li class="littlebrother">
+          <label class="desc">可提现余额</label>
+        </li></ol>
+    </view>
+    <view class="outcomeAmount">
+      <ol class="olname">
+           <label>提现金额</label>
+      </ol>
+     <ol class="olinput">
+           <input placeholder="请输入金额" type="digit" maxlength="6" placeholder-class="input-placeholder" bindinput="enterOutcomeAmount" disabled="{{outcomeAmountInputStatus}}"></input>
+      </ol>
+      <ol class="olshowAmount">
+           <label>实收: {{outcomeAmountReal}}</label>
+      </ol>
+    </view>
 
+    <view class="outcomeRule">
+       <label class="ruleTitle">友情提示:</label>
+       <label>单次提现金额最低10元, 最高200元</label>
+       <label>每个用户单日可进行2次提现</label>
+       <label class="ruleTitle">特别提示:</label>
+       <label class="warnRule">单次提现手续费0.1元, 其他费用以微信支付为准</label>
+    </view>
+
+    <view class="outcomSubmit">
+       <label>
+         <button type="primary" class="{{outcomeButtonStatus?'disableButton':''}}" disabled="{{outcomeButtonStatus}}" bindtap="submitOutcomeOrder">提现</button>
+       </label>
+    </view>
+  </view>
+
+
+
+
+
+  <!-- <view class="outcome_dialog_screen" bindtap="hiddenOutcomeDialog" wx:if="{{enableOutcomeDialog}}">
+  
+     <view class="outcome_dialog_box">
+          ABCD 
+
+
+
+     </view>
+
+
+
+
+  </view> -->
 </view>

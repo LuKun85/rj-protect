@@ -24,7 +24,13 @@ Page({
         applyPackageCount: 1,
         payMethod: "ONLINE",
         totalApplyPackagePrice: 10.00,
-        payButtonStatus: false
+        payButtonStatus: false,
+        enableOutcomeDialog: false,
+        outcomeAmount: 0,
+        outcomeAmountReal: 0,
+        outcomeButtonStatus: false,
+        outcomeAmountInputStatus: false,
+        refreshCurrentPage: true
     },
 
     /**
@@ -67,12 +73,17 @@ Page({
      */
     onShow: function() {
 
+        var that = this;
+        if (!that.data.refreshCurrentPage) {
+            that.setData({
+                refreshCurrentPage: true
+            })
+            return;
+        }
         wx.showLoading({
-            title: '获取用户信息',
+            title: '加载中...',
             mask: true
         })
-
-        var that = this;
         var getMemberId = setInterval(function() {
             var memberId = app.globalData.memberId;
             console.info("memberId=", memberId)
@@ -134,7 +145,13 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide: function() {
-
+        // var that = this;
+        // if (!that.data.refreshCurrentPage) {
+        //     that.setData({
+        //         refreshCurrentPage: true
+        //     })
+        //     return;
+        // }
     },
 
     /**
@@ -182,6 +199,7 @@ Page({
         wx.scanCode({
             onlyFromCamera: true,
             success: (res) => {
+                console.info("绑定袋子扫描二维码结果:", res)
                 var packageQrcode = res.result;
                 that.setData({
                     packageQrcode: res.result
@@ -189,7 +207,12 @@ Page({
                 wx.setStorage({
                     key: 'packageQrcode',
                     data: packageQrcode,
-                    success: res => {}
+                    success: res => {
+                        console.info("缓存袋子二维码成功:=", res)
+                    },
+                    fail: res => {
+                        console.info("缓存袋子二维码失败:=", res)
+                    }
                 })
                 var params = {
                     "instId": config.config.instId,
@@ -197,7 +220,9 @@ Page({
                     "memberId": that.data.memberInfo.memberId,
                     "packageOutCode": packageQrcode
                 };
+                console.info("检查袋子是否被绑定请求参数", params)
                 server.POST(server.api.checkBind, params).then(res => {
+                    console.info("检查袋子是否被绑定请求结果:=", res)
                     if ("000000" == res.respCode) {
                         wx.showModal({
                             title: '提示',
@@ -216,23 +241,33 @@ Page({
                                             url: '/pages/result/success',
                                         })
                                     } else {
+                                        //不刷新页面
+                                        that.setData({
+                                            refreshCurrentPage: false
+                                        })
                                         wx.showToast({
                                             title: res.respMsg,
                                             icon: 'none',
-                                            duration: 2000
+                                            duration: 3000
                                         })
                                     }
                                 });
                             }
                         })
                     } else {
+                        console.info("检查袋子是否被绑定失败请求结果:=", res)
+                            //不刷新页面
+                        that.setData({
+                            refreshCurrentPage: false
+                        })
                         wx.showToast({
                             title: res.respMsg,
                             icon: 'none',
-                            duration: 2000
+                            duration: 3000
                         })
                     }
                 }).catch(res => {
+                    console.info("检查袋子是否被绑定失败请求结果:=", res)
                     wx.showToast({
                         title: res.respMsg,
                         icon: 'none',
@@ -355,7 +390,7 @@ Page({
             "packageType": that.data.applyPackageType,
             "payMethod": that.data.payMethod,
             "packagePrice": "10",
-            "payPrice": "0.01",
+            "payPrice": that.data.totalApplyPackagePrice,
             "applyPackageCount": that.data.applyPackageCount
         };
         server.POST(server.api.applyPackage, params).then(res => {
@@ -381,10 +416,12 @@ Page({
                             "memberInfo.avaiblePackageCount": that.data.memberInfo.avaiblePackageCount + 1
                         })
                         server.POST(server.api.updatePackageOrderStatus, params).then(res => {
+                            wx.hideLoading();
                             console.info("更新购买袋子订单状态=", res)
                             if ('000000' == res.respCode) {
                                 wx.setStorageSync('successMessage', '支付成功')
-                                wx.navigateTo({
+                                wx.setStorageSync('successType', '01')
+                                wx.redirectTo({
                                     url: '/pages/result/success',
                                 })
                             } else {
@@ -394,7 +431,6 @@ Page({
                                     mask: true
                                 })
                             }
-                            wx.hideLoading();
                         }).catch(res => {
                             wx.hideLoading();
                             console.info("更新购买袋子订单状态失败:", res)
@@ -443,5 +479,162 @@ Page({
 
     showService: function() {
 
-    }
+    },
+    // showOutcomeDialog: function(e) {
+    //     var that = this;
+    //     that.setData({
+    //         enableOutcomeDialog: true
+    //     })
+    // },
+
+    // 提现弹窗弹层
+    showOutcomeDialog: function() {
+        // 显示遮罩层
+        var animation = wx.createAnimation({
+            duration: 200,
+            timingFunction: "linear",
+            delay: 0
+        })
+        this.animation = animation
+        animation.translateY(600).step()
+        this.setData({
+            animationData: animation.export(),
+            enableOutcomeDialog: true,
+            outcomeButtonStatus: false,
+            outcomeAmount: 0,
+            outcomeAmountInputStatus: false
+        })
+        setTimeout(function() {
+            animation.translateY(0).step()
+            this.setData({
+                animationData: animation.export()
+            })
+        }.bind(this), 200)
+
+    },
+
+    hideOutcomeDialog: function() {
+        // 隐藏遮罩层
+        var animation = wx.createAnimation({
+            duration: 200,
+            timingFunction: "linear",
+            delay: 0
+        })
+        this.animation = animation
+        animation.translateY(300).step()
+        this.setData({
+            animationData: animation.export(),
+        })
+        setTimeout(function() {
+            animation.translateY(0).step()
+            this.setData({
+                animationData: animation.export(),
+                enableOutcomeDialog: false,
+                outcomeButtonStatus: false,
+                outcomeAmount: 0,
+                outcomeAmountInputStatus: false
+            })
+        }.bind(this), 200)
+    },
+
+    enterOutcomeAmount: function(e) {
+
+        // // var reg = /^[1-9]+[0-9]*]*$/;
+        // var reg = /^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/;
+        // if (!reg.test(e.detail.value)) {
+        //     wx.showToast({
+        //         title: "请输入正确金额",
+        //         icon: 'none',
+        //         duration: 2000
+        //     })
+        //     return;
+        // }
+
+        var that = this;
+        that.setData({
+            outcomeAmount: e.detail.value
+        })
+
+        if (e.detail.value > 0.1) {
+            that.setData({
+                outcomeAmountReal: e.detail.value - 0.1
+            })
+        } else {
+            that.setData({
+                outcomeAmountReal: 0
+            })
+        }
+
+
+    },
+
+    submitOutcomeOrder: function(e) {
+        var that = this;
+        if (that.data.outcomeAmount < 10) {
+            wx.showToast({
+                title: "最低金额:10元",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+        if (that.data.outcomeAmount > 200) {
+            wx.showToast({
+                title: "最高金额:200元",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+        if (that.data.outcomeAmountReal <= 0) {
+            wx.showToast({
+                title: "请输入正确金额",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+
+        that.setData({
+            outcomeButtonStatus: true,
+            outcomeAmountInputStatus: true
+        })
+
+        wx.showLoading({
+            title: '处理中',
+            mask: true
+        })
+        var params = {
+            "instId": config.config.instId,
+            "platformType": config.config.platformType,
+            "memberId": that.data.memberInfo.memberId,
+            "phoneNumber": that.data.memberInfo.memberPhoneNumber,
+            "outcomeAmount": that.data.outcomeAmount,
+            "outcomeOrderDesc": "融久会员提现",
+            "outcomeType": "00"
+        };
+        server.POST(server.api.doOutcomeOrder, params).then(res => {
+            wx.hideLoading();
+            if ("000000" == res.respCode) {
+                console.info("提现成功:", res)
+                wx.setStorageSync('successMessage', '提现成功')
+                wx.setStorageSync('successType', '01')
+                wx.redirectTo({
+                    url: '/pages/result/success',
+                })
+            } else {
+                wx.showToast({
+                    title: res.respMsg,
+                    icon: 'none',
+                    duration: 4000
+                })
+            }
+        }).catch(res => {
+            wx.hideLoading();
+            console.info("提现下单失败:", res)
+        });
+    },
+
+
+
 })

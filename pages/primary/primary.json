@@ -1,8 +1,8 @@
 {
-  "navigationBarTitleText": "首页",
-  "navigationBarBackgroundColor": "#00CD66",
-  "usingComponents": {
-    "custom-acct-register": "../../components/dialog/custom-acct-register",
-    "Login": "../../components/custom-login/acct-login"
-  }
+    "navigationBarTitleText": "首页",
+    "navigationBarBackgroundColor": "#17dbc1",
+    "usingComponents": {
+        "custom-acct-register": "../../components/dialog/custom-acct-register",
+        "Login": "../../components/custom-login/acct-login"
+    }
 }

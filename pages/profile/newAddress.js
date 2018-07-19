@@ -5,6 +5,9 @@ var config = require("../../config/config.js")
 var util = require("../../utils/util.js")
 var getWxrequestPromisify = util.wxPromisify(wx.request);
 
+const app = getApp();
+
+
 Page({
 
     /**
@@ -57,6 +60,8 @@ Page({
         memberInfo: {},
         memberId: '',
         loginStatus: '',
+        memberPhoneNumberSecured: '',
+
 
         familyTag: "家",
         companyTag: "公司",
@@ -72,14 +77,16 @@ Page({
      */
     onLoad: function(options) {
 
+        var that = this;
+
         console.info('options=', options)
         var addressId = options.addressId;
         var memberId = options.memberId;
-        this.setData({
+        that.setData({
             memberId: memberId
         })
         if (addressId != null && addressId != '' && addressId != undefined) {
-            this.setData({
+            that.setData({
                 addressId: addressId,
                 buttonFunction: 'updateMemberNewAddress'
             })
@@ -102,7 +109,7 @@ Page({
             server.GET(server.api.getMerchantAddressDetail, params).then(res => {
                 wx.hideLoading();
                 if ("000000" == res.respCode) {
-                    this.setData({
+                    that.setData({
                         contactName: res.responseBody.queryResultList[0].contactName,
                         contactPhone: res.responseBody.queryResultList[0].contactPhone,
                         provinceCode: res.responseBody.queryResultList[0].provinceCode,
@@ -142,6 +149,20 @@ Page({
                     duration: 2000
                 })
             })
+        } else {
+            var phone = app.globalData.memberPhoneNumber;
+            that.setData({
+                    contactPhone: phone,
+                    memberPhoneNumberSecured: phone
+                })
+                // if (phone == null || phone == '') {
+                //     phone = '1**********'
+                // } else {
+                //     phone = util.securityPhoneNumber(phone);
+                // }
+                // that.setData({
+                //     memberPhoneNumberSecured: phone,
+                // })
         }
 
         this.setData({
@@ -229,7 +250,8 @@ Page({
         animation.translateY(300).step()
         this.setData({
             animationData: animation.export(),
-            showCityDialogFlag: true
+            showCityDialogFlag: true,
+            saveButtonClicked: false
         })
         setTimeout(function() {
             animation.translateY(0).step()
@@ -332,7 +354,8 @@ Page({
 
         var a = util.compareAddressTwoList(this.data.previewSelectItem, e.detail.value);
         this.setData({
-            previewSelectItem: e.detail.value
+            previewSelectItem: e.detail.value,
+            saveButtonClicked: false
         })
         var queryUpAddressCode = '';
         switch (a) {
@@ -464,33 +487,33 @@ Page({
 
     ensureAddressCodeSelect: function() {
         this.setData({
-            showCityDialogFlag: false
+            showCityDialogFlag: false,
+            saveButtonClicked: false
         })
     },
 
     enterContactName: function(e) {
         this.setData({
-            contactName: e.detail.value
+            contactName: e.detail.value,
+            saveButtonClicked: false
         })
     },
     enterContactPhone: function(e) {
         this.setData({
-            contactPhone: e.detail.value
-        })
-    },
-    enterContactPhone: function(e) {
-        this.setData({
-            contactPhone: e.detail.value
+            contactPhone: e.detail.value,
+            saveButtonClicked: false
         })
     },
     enterAddressDetail: function(e) {
         this.setData({
-            addressDetail: e.detail.value
+            addressDetail: e.detail.value,
+            saveButtonClicked: false
         })
     },
     enterAddressRemark: function(e) {
         this.setData({
-            addressRemark: e.detail.value
+            addressRemark: e.detail.value,
+            saveButtonClicked: false
         })
     },
 
@@ -567,6 +590,7 @@ Page({
             buildingList: [],
             unitList: [],
             doorList: [],
+            saveButtonClicked: false
         })
 
         var params = {
@@ -631,7 +655,8 @@ Page({
 
         var a = util.compareAddressTwoList(this.data.houseParkPreviewSelectItem, e.detail.value);
         this.setData({
-            houseParkPreviewSelectItem: e.detail.value
+            houseParkPreviewSelectItem: e.detail.value,
+            saveButtonClicked: false
         })
         var queryUpHouseparkCode = '';
         switch (a) {
@@ -763,6 +788,44 @@ Page({
             saveButtonClicked: true
         })
 
+        wx.showLoading({
+            title: '新增中...',
+            mask: true
+        })
+
+        if (util.checkEmpty(that.data.contactName)) {
+            wx.showToast({
+                title: "联系人姓名",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+        if (util.checkEmpty(that.data.contactPhone)) {
+            wx.showToast({
+                title: "联系人手机号",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+        if (util.checkEmpty(that.data.provinceCode)) {
+            wx.showToast({
+                title: "请选择地区",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+        if (util.checkEmpty(that.data.houseparkCode)) {
+            wx.showToast({
+                title: "请选择小区",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+
         //新增地址详细信息
         var params = {
             "instId": config.config.instId,
@@ -797,7 +860,6 @@ Page({
             that.setData({
                 saveButtonClicked: false
             })
-
             if ("000000" == res.respCode) {
                 wx.showToast({
                     title: "保存成功",
@@ -836,6 +898,45 @@ Page({
         that.setData({
             saveButtonClicked: true
         })
+
+        wx.showLoading({
+            title: '更新中...',
+            mask: true
+        })
+
+        if (util.checkEmpty(that.data.contactName)) {
+            wx.showToast({
+                title: "联系人姓名",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+        if (util.checkEmpty(that.data.contactPhone)) {
+            wx.showToast({
+                title: "联系人手机号",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+        if (util.checkEmpty(that.data.provinceCode)) {
+            wx.showToast({
+                title: "请选择地区",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+        if (util.checkEmpty(that.data.houseparkCode)) {
+            wx.showToast({
+                title: "请选择小区",
+                icon: 'none',
+                duration: 2000
+            })
+            return;
+        }
+
 
         //更新地址详细信息
         var params = {

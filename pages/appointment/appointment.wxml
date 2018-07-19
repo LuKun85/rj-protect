@@ -125,15 +125,15 @@
            
             <radio-group class='extraGoodsType' bindchange="setExtraGoodsLevel" wx:if="{{applyExtraGoodsFlag}}">
                <ol> 
-                  <radio value="small" unchecked/>
+                  <radio value="00" unchecked/>
                   <label>少</label>
                </ol>
                <ol> 
-                  <radio value="much"  unchecked />
+                  <radio value="10"  unchecked />
                    <label>多</label>
                </ol>
                <ol> 
-                  <radio value="muchmore" unchecked />
+                  <radio value="20" unchecked />
                   <label>很多</label>
                </ol>
             </radio-group>

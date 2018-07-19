@@ -1,5 +1,6 @@
 const Promise = require('./es6-promise.js')
-const url = "http://wwkforever.natapp4.cc/protect";
+const url = "http://www.rongjiuhuanbao.com/protect";
+// const url = "http://wwkforever.natapp4.cc/protect";
 
 var serverAPI = {
 
@@ -60,7 +61,10 @@ var api = {
 
     getRankData: url + "/rank/rankData",
     getRecycleDateList: url + "/common/recycleDateList",
-    getRecycleSpotList: url + "/common/recycleSpotList"
+    getRecycleSpotList: url + "/common/recycleSpotList",
+
+    doOutcomeOrder: url + "/outcome/order",
+
 }
 
 

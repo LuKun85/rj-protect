@@ -10,12 +10,15 @@
     <li class="item" bindtap="getRecycleDateData">
       <a href="#">回收时间</a>
     </li>
-    <li class="item" bindtap="getRecycleSpotData">
+    <!-- <li class="item" bindtap="getRecycleSpotData">
       <a href="#">回收点</a>
+    </li> -->
+    <li class="item" bindtap="getRecycleManualPage">
+      <a href="#">回收攻略</a>
     </li>
   </view>
 
-  <view style='line-height:15rem; padding:0.5rem; margin-top:1rem'>
+  <view class="swiperImageBox">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='true' indicator-dots='{{indicatorDots}}'>
       <block wx:for="{{imgUrls}}" wx:key="{{imgUrls.id}}">
         <swiper-item>
@@ -25,9 +28,18 @@
     </swiper>
   </view>
 
+  <view style="clear:both"></view>
+
   <import src="../../components/custom/newsItem.wxml" />
 
-  <template is="newsItem"/>
+  <!-- <template is="newsItem"/> -->
+
+  <view class="lastestNewsTagBox">
+    <label>最新动态</label>
+  </view>
+  <view wx:for="{{newsList}}" wx:for-item="item" wx:key="item.id">
+    <template is="newsItem" data="{{item}}" />
+  </view>
 
 
   <!-- <view wx:for="{{memberAddressList}}" wx:for-item="item" wx:key="item.id">

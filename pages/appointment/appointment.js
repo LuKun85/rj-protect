@@ -31,7 +31,7 @@ Page({
         applySubPackageCountDisabledFlag: true,
 
         applyExtraGoodsDisabledFlag: true,
-        applyExtraGoodsFlag: false,
+        applyExtraGoodsFlag: "N",
         applyExtraGoodsCountLevel: '00',
 
 
@@ -246,6 +246,12 @@ Page({
                             icon: 'none',
                             duration: 2000
                         })
+                        if ('200012' == res.respCode) {
+                            wx.navigateTo({
+                                url: `/pages/profile/address?memberId=${memberId}`,
+                            })
+                            return
+                        }
                     }
                 }).catch(res => {
                     wx.hideLoading();
@@ -342,12 +348,14 @@ Page({
     },
 
     applyExtraGoodsSwitch: function(e) {
-        this.setData({
-            applyExtraGoodsFlag: e.detail.value
-        })
         if (!e.detail.value) {
             this.setData({
+                applyExtraGoodsFlag: 'N',
                 applyExtraGoodsCountLevel: '00',
+            })
+        } else {
+            this.setData({
+                applyExtraGoodsFlag: 'Y'
             })
         }
     },
@@ -392,7 +400,7 @@ Page({
                 var params = {
                     "instId": config.config.instId,
                     "platformType": config.config.platformType,
-                    "memberId": that.data.memberInfo.memberId,
+                    "memberId": that.data.memberId,
                     "addressId": that.data.memberDefaultAddressId,
                     "appointmentFromDate": that.data.appointmentFromDate,
                     "appointmentToDate": that.data.appointmentFromDate,
@@ -400,11 +408,14 @@ Page({
                     "appointmentToTime": that.data.appointmentToTime,
                     "appointmentPackageOutCode": that.data.packageOutCode,
                     "appointmentCountMethod": that.data.countMethod,
+                    "appointmentExtraGoodsFlag": that.data.applyExtraGoodsFlag,
+                    "appointmentExtraGoodsCountLevel": that.data.applyExtraGoodsCountLevel
                 };
                 server.POST(server.api.confirmAppointmentOrder, params).then(res => {
                     if ('000000' == res.respCode) {
                         wx.setStorageSync('successMessage', '预约成功')
-                        wx.navigateTo({
+                        wx.setStorageSync('successType', '02')
+                        wx.redirectTo({
                             url: '/pages/result/success',
                         })
                     } else {
@@ -439,7 +450,7 @@ Page({
                 var params = {
                     "instId": config.config.instId,
                     "platformType": config.config.platformType,
-                    "memberId": that.data.memberInfo.memberId,
+                    "memberId": that.data.memberId,
                     "packageOutCode": packageQrcode
                 };
                 server.POST(server.api.checkBind, params).then(res => {

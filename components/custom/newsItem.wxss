@@ -1,70 +1,47 @@
-
-.newsItem{
-  color: black;
-  background: -webkit-linear-gradient(top, #CCFFD6, #EEFFF1);
-  background: linear-gradient(to bottom, #CCFFD6, #EEFFF1);
-  border-radius: 10px;
-  /* box-shadow: 0 7px 30px  7px rgba(62, 9, 11, 0.3); */
+.newsItemBox {
+    box-sizing: border-box;
+    border-bottom-style: solid;
+    border-width: 1rpx;
+    border-color: rgb(197, 233, 222);
+    width: 100%;
 }
 
-.newsItem:active, .newsItem:hover{
-  box-shadow: 0 7px 30px  7px rgba(62, 9, 11, 0.3);
-  -webkit-transition: box-shadow 0.5s ease-in;
-  transition: box-shadow 0s ease-in;
+.newsItemBox .imageTitleBox {
+    display: inline-block;
+    width: 30%;
+    margin-left: 5rpx;
+    margin-right: 5rpx;
+    overflow: hidden;
+    height: 100%;
+    vertical-align: middle;
 }
 
-
-
-.newsContentBox {
-  display: inline-block;
-  width: 100%;
-  letter-spacing: 2px;
-  margin: auto 0.1rem auto 0.1rem;
-  word-wrap: break-word;
-  text-overflow: ellipsis;
-  line-height: 1rem;
-  font-size: 13px;
+.newsItemBox .imageTitleBox image {
+    display: inline-block;
+    width: 230rpx;
+    height: 140rpx;
 }
 
-.hotFlag {
-  padding: 1px;
-  color: white;
-  margin-right: 0.2rem;
-  font-size: 12px;
-  border-style: solid;
-  border-width: thin;
-  border-top-right-radius: 18px;
-  border-bottom-right-radius: 18px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#28834c), to(#8adcaa));
-  background-image: -webkit-linear-gradient(left, #28834c 0, #8adcaa 100%);
-  background-image: linear-gradient(90deg, #28834c 0, #8adcaa 100%);
-  box-shadow: 5px 2px 6px #000;
-  position: relative;
-  top: -0.1rem;
+.newsItemBox .imageContentBox {
+    display: inline-block;
+    width: 65%;
+    margin-left: 5rpx;
+    margin-right: 5rpx;
+    overflow: hidden;
+    height: 140rpx;
+    vertical-align: middle;
 }
 
-.newsExtraBox {
-  line-height: 1rem;
+.newsItemBox .imageContentBox .newsTitle {
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.newsExtraBox .newsExtraInfo {
-  margin-top: 5px;
-  margin-bottom: 1px;
-  font-size: 12px;
-  font-weight: 300;
-  color: #3c3c3c;
-}
-
-.newsImgBox {
-  padding: 0.2rem;
-  width: 25%;
-  margin-left: 2%;
-}
-
-.newsImgBox .newsImg{
-  border-radius: 5px;
-  display: inline-block;
-  width: 4.2rem;
-  height: 4.2rem;
-  margin: auto;
+.newsItemBox .imageContentBox .newsSubTitle {
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+    color: rgba(100, 92, 85, 0.87)
 }

@@ -234,8 +234,8 @@ my-package-board
 
 .packageDetail ul .checkMoreDetail {
     display: inline-block;
-    color: rgba(252, 15, 15, 0.932);
-    margin-left: 450rpx;
+    color: rgba(7, 1, 1, 0.911);
+    margin-left: 455rpx;
 }
 
 .packageDetail ul .packageId {

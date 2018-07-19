@@ -1,104 +1,97 @@
 /* pages/primary/pricePage.wxss */
 
 @import '../../components/custom/priceItem.wxss';
-
-.priceBoxBorder{
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.priceBoxBorder {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-
-.priceItemTitle{
-  background: -webkit-linear-gradient(top, #33CC52, #25963C);
-  background: linear-gradient(to bottom, #33CC52, #25963C);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-/*   box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3); */
-  margin-top: 0 !important;
-  margin-bottom: 0;
-  line-height:  80rpx;
-  font-size: 16px !important;
-  color: #030E05 !important;
+.priceItemTitle {
+    background: -webkit-linear-gradient(top, #17dbc1, #17dbc1);
+    background: linear-gradient(top, #17dbc1, #17dbc1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /*   box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3); */
+    margin-top: 0 !important;
+    margin-bottom: 0;
+    line-height: 80rpx;
+    font-size: 16px !important;
+    color: rgb(230, 240, 232) !important;
 }
-
 
 .categoryPage {
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
-  background-color: #bbb;
-  min-height: 600px;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    background-color: #bbb;
+    min-height: 600px;
 }
 
 .categoryName {
-  margin: 0.5rem 0 0.2rem 0;
-  font-size: 18px;
-  display: inline-block;
-  width: 100%;
+    margin: 0.5rem 0 0.2rem 0;
+    font-size: 18px;
+    display: inline-block;
+    width: 100%;
 }
 
 .nameBox {
-  display: inline-block;
-  padding: 0.2rem;
-  border-top-right-radius: 18px;
-  border-bottom-right-radius: 18px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#28834C), to(#8ADCAA));
-  background-image: -webkit-linear-gradient(left, #28834C 0, #8ADCAA 100%);
-  background-image: linear-gradient(90deg, #28834C 0, #8ADCAA 100%);
-  box-shadow:5px 2px 6px #000;
+    display: inline-block;
+    padding: 0.2rem;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#28834C), to(#8ADCAA));
+    background-image: -webkit-linear-gradient(left, #28834C 0, #8ADCAA 100%);
+    background-image: linear-gradient(90deg, #28834C 0, #8ADCAA 100%);
+    box-shadow: 5px 2px 6px #000;
 }
+
 .categoryName .firstName {
-  margin: 0.5rem;
-  color: white;
-  font-style: oblique;
+    margin: 0.5rem;
+    color: white;
+    font-style: oblique;
 }
-
-
 
 .headerBox {
-  background: -webkit-linear-gradient(top, #3a404d, #181c26);
-  background: linear-gradient(to bottom, #3a404d, #181c26);
-  border-radius: 15px;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
-  font-size: 18px;
-  color: #e1e1e1;
+    background: -webkit-linear-gradient(top, rgb(23, 219, 193), #059fdb);
+    background: linear-gradient(to bottom, #17dbc1, #17dbc1);
+    border-radius: 15px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
+    font-size: 18px;
+    color: #e1e1e1;
 }
 
-
-.headerBox .name{
-   display: inline-block;
-   line-height: 40rpx;
-   position: relative;
-   font-size: 14px;
-   left: 9rpx;
-   bottom: 5rpx;
+.headerBox .name {
+    display: inline-block;
+    line-height: 40rpx;
+    position: relative;
+    font-size: 14px;
+    left: 9rpx;
+    bottom: 5rpx;
 }
 
-.headerBox .dateBox{
-   display: inline-block;
-   line-height: 100rpx;
-   width: 82%;
-   background-color: white;
-   margin-left: 20rpx;
-   text-align: center;
+.headerBox .dateBox {
+    display: inline-block;
+    line-height: 100rpx;
+    width: 82%;
+    background-color: white;
+    margin-left: 20rpx;
+    text-align: center;
 }
 
-.headerBox .dateBox .date{
-   display: inline-block;
-   color: #fa6855;
-   font-size: 24px;
-   line-height: 100rpx;
+.headerBox .dateBox .date {
+    display: inline-block;
+    color: #fa6855;
+    font-size: 24px;
+    line-height: 100rpx;
 }
 
-.headerBox .dateBox .time{
-   display: inline-block;
-   color: black;
-   font-size: 20px;
-   width: 20%;
-   line-height: 100rpx;
-   position: relative;
+.headerBox .dateBox .time {
+    display: inline-block;
+    color: black;
+    font-size: 20px;
+    width: 20%;
+    line-height: 100rpx;
+    position: relative;
 }
-
-

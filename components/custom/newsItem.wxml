@@ -1,21 +1,37 @@
 <template name="newsItem">
-
-  <view class='wk-vertical-divide'> </view>
-  <view class='wk-cell-body newsItem' style='margin:0.5rem;'>
+  <!-- <view class='wk-vertical-divide'> </view> -->
+  <view class="newsItemBox" data-id="{{item.id}}" data-newsUrl="{{item.messageUrl}}" bindtap="goNewsPage">
+    <view style="margin-top:20rpx; margin-bottom:20rpx">
+      <view class="imageTitleBox">
+        <image mode="scaleToFill" src="{{item.titlePictureUrl}}" />
+      </view>
+      <view class="imageContentBox">
+        <label class="newsTitle">{{item.title}}</label>
+        <label class="newsSubTitle">{{item.subTitle}}</label>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='wk-cell-body newsItem' style='margin:0.5rem;' data-id="{{item.id}}" data-newsUrl="{{item.messageUrl}}" bindtap="goNewsPage">
+    
     <view class='wk-cell-body-bd' style='width:70%;'>
       <view style='line-height:3rem'>
         <label class='newsContentBox'>
-          <label class='hotFlag'>最新</label>
-          美丽的中华人民共和国是怎么样的好弄分度盘发到你说的是个单
+          <view class="newsContentTitle">
+          <label class='hotFlag' hidden="{{item.hotFlag == 'Y'? false: true}}">最新</label>
+              {{item.title}}
+          </view>
+          <view class="newsContentSubTitle">
+          <label>{{item.subTitle}}</label>
+          </view>
         </label>
       </view>
       <view class='newsExtraBox'>
         <view class='newsExtraInfo'>
           <view style='display:inline-block; width: 30%'>
-            官方
+            {{item.source}}
           </view>
           <view style='display:inline-block; width: 40%'>
-            2018-01-02
+            {{item.messageDate}}
           </view>
           <view style='display:inline-block; width: 30%'>
             300 阅读
@@ -24,7 +40,18 @@
       </view>
     </view>
     <view class='wk-cell-body-ft newsImgBox'>
-      <image class="newsImg" src='../../assets/images/lunbo/lunbo1.png'></image>
+      <image class="newsImg" src='{{item.titlePictureUrl}}'></image>
     </view>
-  </view>
+
+
+    <view class="newsDetailBox">A
+    
+    </view>
+    
+    <view class="newsImageCoverBox">
+            <image class="newsImg" src='{{item.titlePictureUrl}}'></image>
+    </view> 
+
+
+  </view> -->
 </template>

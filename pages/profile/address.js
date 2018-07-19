@@ -17,6 +17,8 @@ Page({
         memberAddressList: [],
         memberInfo: {},
         loginStatus: '',
+        memberPhoneNumberSecured: ''
+
     },
 
     /**
@@ -59,6 +61,18 @@ Page({
                 that.setData({
                     loginStatus: loginStatus
                 })
+
+                var phone = app.globalData.memberPhoneNumber;
+                console.info("phone=", phone)
+                if (phone == null || phone == '') {
+                    phone = '1**********'
+                } else {
+                    phone = util.securityPhoneNumber(phone);
+                }
+                that.setData({
+                    memberPhoneNumberSecured: phone
+                })
+
                 var params = {
                     "instId": config.config.instId,
                     "platformType": config.config.platformType,
