@@ -15,12 +15,14 @@
     <open-data class="memberHeadIcon" type="userAvatarUrl"></open-data>
     <open-data class="memberName" type="userNickName"></open-data>
     <image src='../../assets/images/profile/realFlag.png' class='realFlag' hidden="{{memberInfo.realFlag == 'Y' && loginStatus == 'Y'? false:true}}"></image>
-    <view class='integral'>
-      <image src='../../assets/images/profile/integral.png' class='integralIcon'></image>
+    <view class='integral' bindtap="goMyIntegralDetailPage">
+      <image src='../../assets/images/profile/integral_3.png' class='integralIcon'></image>
       <label class='integral'>信誉值:{{memberInfo.memberIntegarl}}</label>
     </view>
   </view>
-  <view class='assetsBar'>
+
+
+ <!-- <view class='assetsBar'>
     <view class='weui-flex' style='height:100%; align-items:center;'>
       <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
         <view style='display:inline-block;height:100%; width:100%'>
@@ -36,13 +38,6 @@
           <view class='info'>{{memberInfo.postTotalWeight}}市斤</view>
         </view>
       </view>
-      <!-- <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
-        <view style='display:inline-block;height:100%; width:100%'>
-          <image src='../../assets/images/profile/postTotalCount.png' class='icon'></image>
-          <view class='desc'>总件数</view>
-          <view class='info'>{{memberInfo.postTotalCount}}件</view>
-        </view>
-      </view> -->
       <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
         <view style='display:inline-block;height:100%; width:100%'>
           <image src='../../assets/images/profile/postTotalProfit.png' class='icon'></image>
@@ -58,14 +53,92 @@
         </view>
       </view>
     </view>
+  </view> -->
+
+
+   <view class='assetsBar'>
+      <view class='assetsCellBox'>
+          <image src='../../assets/images/profile/postTotalTimes_2.png' class='newImg'></image>
+          <view class='newDesc'>总投递</view>
+          <view class='newValue'>{{memberInfo.postTotalTimes}}次</view>
+      </view>
+      <view class='assetsCellBox'>
+          <image src='../../assets/images/profile/postTotalProfit_2.png' class='newImg'></image>
+          <view class='newDesc'>总收益</view>
+          <view class='newValue'>{{memberInfo.postTotalProfit}}元</view>
+      </view>
   </view>
+
+   <view class='assetsBar'>
+      <view class='assetsCellBox'>
+          <image src='../../assets/images/profile/postTotalWeight_2.png' class='newImg'></image>
+          <view class='newDesc'>总重量</view>
+          <view class='newValue'>{{memberInfo.postTotalWeight}}市斤</view>
+      </view>
+      <view class='assetsCellBox'>
+          <image src='../../assets/images/profile/availableProfit_2.png' class='newImg'></image>
+          <view class='newDesc'>余额</view>
+          <view class='newValue'>{{memberInfo.availableProfit}}元</view>
+      </view>
+  </view>
+
+
+
+  <!-- <view class='assetsBar'>
+    <view class='weui-flex' style='height:100%; align-items:center;'>
+      <view class='assetsBarItem' style='align-items:center; flex: 2; line-height:70rpx'>
+          <image src='../../assets/images/profile/postTotalWeight.png' class='newImg'></image>
+          <view class='newDesc'>总投递</view>
+          <view class='newValue'>{{memberInfo.postTotalTimes}}次</view>
+        <view class="assetsLabel img">
+            <image src='../../assets/images/profile/postTotalWeight.png' class='icon'></image>
+        </view>
+        <view class="assetsLabel desc">B</view>
+        <view class="assetsLabel value">C</view>
+
+        <view style='display:inline-block;height:100%; width:100%'>
+          <image src='../../assets/images/profile/postTotalTimes.png' class='icon'></image>
+          <view class='desc'>总投递</view>
+          <view class='info'>{{memberInfo.postTotalTimes}}次</view>
+        </view>
+      </view>
+      <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
+        <view style='display:inline-block;height:100%; width:100%'>
+          <image src='../../assets/images/profile/postTotalWeight.png' class='icon'></image>
+          <view class='desc'>总重量</view>
+          <view class='info'>{{memberInfo.postTotalWeight}}市斤</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='assetsBar'>
+    <view class='weui-flex' style='height:100%; align-items:center;'>
+
+      <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
+        <view style='display:inline-block;height:100%; width:100%'>
+          <image src='../../assets/images/profile/postTotalProfit.png' class='icon'></image>
+          <view class='desc'>总收益</view>
+          <view class='info'>{{memberInfo.postTotalProfit}}元</view>
+        </view>
+      </view>
+      <view class='weui-flex__item assetsBarItem' style='align-items:center; flex: 2'>
+        <view style='display:inline-block;height:100%; width:100%'>
+          <image src='../../assets/images/profile/availableProfit.png' class='icon'></image>
+          <view class='desc'>余额</view>
+          <view class='info'>{{memberInfo.availableProfit}}元</view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+
   <view class="weui-grids">
     <a href="" class="weui-grid js_grid" bindtap="bindPackage">
       <button class='gridButton'>
         <view class="weui-grid__icon">
           <image src="../../assets/images/grid/scan.png" alt=""></image>
         </view>
-        <p class="weui-grid__label">绑定袋子</p>
+        <p class="weui-grid__label grid_label_size">绑定袋子</p>
       </button>
     </a>
     <a href="" class="weui-grid js_grid" bindtap="showShouYinTai">
@@ -73,7 +146,7 @@
         <view class="weui-grid__icon">
           <image src="../../assets/images/grid/package.png" alt=""></image>
         </view>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid_label_size">
           购买袋子[{{memberInfo.avaiblePackageCount != null ? memberInfo.avaiblePackageCount: '0'}}]
         </p>
       </button>
@@ -83,7 +156,7 @@
         <view class="weui-grid__icon">
           <image src="../../assets/images/grid/mypackage.png" alt=""></image>
         </view>
-        <p class="weui-grid__label">
+        <p class="weui-grid__label grid_label_size">
           我的袋子[{{memberInfo.currentPackageCount != null ? memberInfo.currentPackageCount: '0'}}]
         </p>
       </button>
@@ -93,7 +166,7 @@
         <view class="weui-grid__icon">
           <image src="../../assets/images/grid/outcome.png" alt=""></image>
         </view>
-        <p class="weui-grid__label">个人提现</p>
+        <p class="weui-grid__label grid_label_size">个人提现</p>
       </button>
     </a>
     <a href="" class="weui-grid js_grid" bindtap="showMemberAddressList">
@@ -101,7 +174,15 @@
         <view class="weui-grid__icon">
           <image src="../../assets/images/grid/address.png" alt=""></image>
         </view>
-        <p class="weui-grid__label">我的地址</p>
+        <p class="weui-grid__label grid_label_size">我的地址</p>
+      </button>
+    </a>
+    <a href="" class="weui-grid js_grid" bindtap="goMyIntegralDetailPage">
+      <button class='gridButton'>
+        <view class="weui-grid__icon">
+          <image src="../../assets/images/profile/integral_3.png" alt=""></image>
+        </view>
+        <p class="weui-grid__label grid_label_size">信誉明细</p>
       </button>
     </a>
     <a href="" class="weui-grid js_grid">
@@ -109,10 +190,14 @@
         <view class="weui-grid__icon">
           <image src="../../assets/images/grid/service.png" alt=""></image>
         </view>
-        <p class="weui-grid__label">客服</p>
+        <p class="weui-grid__label grid_label_size">客服</p>
       </button>
     </a>
   </view>
+
+
+
+
   <view class="commodity_screen" bindtap="hideShouYinTai" wx:if="{{showShouYinTaiStatus}}"></view>
   <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showShouYinTaiStatus}}">
     <view class='payDescCell'>

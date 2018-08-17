@@ -1,10 +1,10 @@
 const Promise = require('./es6-promise.js')
-const url = "http://www.rongjiuhuanbao.com/protect";
+const url = "https://www.rongjiuhuanbao.com/protect";
 // const url = "http://wwkforever.natapp4.cc/protect";
 
 var serverAPI = {
 
-    checkNetwork: url + "/login/checkNetWork",
+    checkNetwork: url + "/login/checkNetWork", 
 
     getOpenId: url + "/member/openId",
     regist: url + "/member/regist",
@@ -47,6 +47,7 @@ var api = {
     deleteMerchantAddress: url + "/member/deleteAddress",
     setMerchantDefaultAddress: url + "/member/setDefaultAddress",
     getMerchantDefaultAddress: url + "/member/defaultAddress",
+    getMerchantIntegralDetail: url + "/member/integralDetail",
 
     checkBind: url + "/package/checkBind",
     bindPackage: url + "/package/bind",

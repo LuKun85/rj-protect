@@ -7,8 +7,8 @@
 }
 
 .priceItemTitle {
-    background: -webkit-linear-gradient(top, #17dbc1, #17dbc1);
-    background: linear-gradient(top, #17dbc1, #17dbc1);
+    background: -webkit-linear-gradient(top, rgb(78, 89, 113), rgb(78, 89, 113));
+    background: linear-gradient(top, rgb(78, 89, 113), rgb(78, 89, 113));
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     /*   box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3); */
@@ -94,4 +94,21 @@
     width: 20%;
     line-height: 100rpx;
     position: relative;
+}
+
+.headDateBox {
+    box-sizing: border-box;
+    height: 120rpx;
+    line-height: 120rpx;
+    background: -webkit-linear-gradient(top bottom, rgb(126, 154, 175), rgb(126, 154, 175));
+    background: linear-gradient(to bottom, rgb(126, 154, 175), rgb(126, 154, 175));
+    padding-top: 15rpx;
+}
+
+.headDateBox label {
+    width: 100%;
+    display: block;
+    line-height: 40rpx;
+    text-align: center;
+    color: whitesmoke;
 }

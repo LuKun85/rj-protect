@@ -9,7 +9,7 @@ var newsItem = [{
         "source": "官方",
         "subTitle": "融久环保重要的公告,都会发布在这里",
         "readCount": "300",
-        "messageUrl": "http://oa.rongjiuhuanbao.com/news/news.html",
+        "messageUrl": "https://www.rongjiuhuanbao.com/1/1.html",
         "titlePictureUrl": filepath + 'F2018000000101',
         "messageDate": "2018-07-18",
         "hotFlag": "Y"
@@ -20,7 +20,7 @@ var newsItem = [{
         "source": "官方",
         "subTitle": "融久环保精彩和丰富的活动,都在这里",
         "readCount": "400",
-        "messageUrl": "http://oa.rongjiuhuanbao.com/news/two.html",
+        "messageUrl": "https://www.rongjiuhuanbao.com/2/2.html",
         "titlePictureUrl": filepath + 'F2018000000102',
         "messageDate": "2018-07-18",
         "hotFlag": "Y"
@@ -31,7 +31,7 @@ var newsItem = [{
         "source": "官方",
         "subTitle": "如果你对融久环保小程序有疑问,可以点击这里",
         "readCount": "500",
-        "messageUrl": "http://oa.rongjiuhuanbao.com/news/three.html",
+        "messageUrl": "https://www.rongjiuhuanbao.com/3/3.html",
         "titlePictureUrl": filepath + 'F2018000000103',
         "messageDate": "2018-07-18",
         "hotFlag": "Y"

@@ -38,7 +38,7 @@
               <label>季度排行榜</label>
             </view>
             <ol>
-              <scroll-view scroll-y style="height:800rpx" bindscroll="scroll" scroll-into-view="{{toMemberRankItem}}" scroll-top="{{scrollTop}}">
+              <scroll-view scroll-y style="height:{{scrollWeightQuarterHeight}}rpx" lower-threshold="0" scroll-into-view="{{toMemberRankItem}}" scroll-top="{{scrollTop}}" bindscrolltolower="getMoreQuarterRankData">
                 <!-- <view class="li myranklocation" wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id">
                   <template is="rankList" data="{{...itemList}}" />
                 </view> -->
@@ -58,7 +58,7 @@
               <label>年度排行榜</label>
             </view>
             <ol>
-              <scroll-view scroll-y style="height:800rpx" bindscroll="scroll" scroll-into-view="{{toMemberRankItem}}" scroll-top="{{scrollTop}}">
+              <scroll-view scroll-y style="height:1000rpx" lower-threshold="0" scroll-into-view="{{toMemberRankItem}}" scroll-top="{{scrollTop}}" bindscrolltolower="getMoreAnualRankData">
                 <!-- <view class="li myranklocation" wx:for="{{rankDataList}}" wx:for-item="itemList" wx:key="item.id">
                   <template is="rankList" data="{{...itemList}}" />
                 </view> -->

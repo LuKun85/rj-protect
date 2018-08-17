@@ -123,7 +123,7 @@
               <switch unChecked bindchange="applyExtraGoodsSwitch" />
             </view>
            
-            <radio-group class='extraGoodsType' bindchange="setExtraGoodsLevel" wx:if="{{applyExtraGoodsFlag}}">
+            <radio-group class='extraGoodsType' bindchange="setExtraGoodsLevel" wx:if="{{applyExtraGoodsFlag == 'Y'}}">
                <ol> 
                   <radio value="00" unchecked/>
                   <label>少</label>

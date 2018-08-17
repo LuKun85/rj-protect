@@ -10,7 +10,7 @@ var getWxLoginPromisify = util.wxPromisify(wx.login);
 const app = getApp()
 
 App({
-    onLaunch: function() {
+    onLaunch: function() { 
         //清除所有缓存
         wx.clearStorageSync();
 

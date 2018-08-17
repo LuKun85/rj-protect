@@ -1,0 +1,209 @@
+/* pages/primary/integralDetail.wxss */
+
+.integralPage {
+    width: 100%;
+    height: 100%;
+}
+
+.integralHeader {
+    /* overflow: hidden; */
+    height: 200rpx;
+    min-height: 200rpx;
+    background: -webkit-linear-gradient(top, rgb(78, 89, 113), rgb(78, 89, 113));
+    background: linear-gradient(top, rgb(78, 89, 113), rgb(78, 89, 113));
+}
+
+.integralHeader .title {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    height: 50rpx;
+    margin-top: 40rpx;
+}
+
+.integralHeader .title label {
+    display: inline-block;
+    color: aliceblue;
+    height: 50rpx;
+}
+
+.headerImg {
+    display: inline-block;
+    width: 100%;
+    height: 100rpx;
+    text-align: center;
+}
+
+.headerImg image {
+    width: 150rpx;
+    height: 80rpx;
+}
+
+.element1 {
+    display: inline-block;
+    width: 300rpx;
+    height: 300rpx;
+    background-color: lightpink;
+    border-radius: 50%;
+}
+
+.child1 {
+    display: inline-block;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+    background-color: #009966;
+    position: relative;
+    top: 28px;
+}
+
+.label1 {
+    width: 300rpx;
+    height: 20rpx;
+    z-index: 2;
+    position: relative;
+    top: -166rpx;
+    left: 226rpx;
+    background: #009966;
+    transform: rotate(7deg);
+    -ms-transform: rotate(7deg);
+    /* IE 9 */
+    -moz-transform: rotate(7deg);
+    /* Firefox */
+    -webkit-transform: rotate(7deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(7deg);
+}
+
+.label2 {
+    width: 300rpx;
+    height: 20rpx;
+    z-index: 2;
+    position: relative;
+    top: -166rpx;
+    left: 226rpx;
+    background: #009966;
+    transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    /* IE 9 */
+    -moz-transform: rotate(10deg);
+    /* Firefox */
+    -webkit-transform: rotate(10deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(10deg);
+}
+
+.label3 {
+    width: 300rpx;
+    height: 20rpx;
+    z-index: 2;
+    position: relative;
+    top: -166rpx;
+    left: 226rpx;
+    background: #009966;
+    transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    /* IE 9 */
+    -moz-transform: rotate(20deg);
+    /* Firefox */
+    -webkit-transform: rotate(20deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(20deg);
+}
+
+.integralValue {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.integralValue label {
+    display: inline-block;
+    position: relative;
+    top: -50rpx;
+    color: aliceblue;
+}
+
+.priceItemCell {
+    z-index: 1;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    transform: translateZ(0) scale(1, 1);
+    padding-left: 10rpx !important;
+    padding-right: 10rpx !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    /* background: -webkit-linear-gradient(top, #3a4a4d, #181c26);
+    background: linear-gradient(to bottom, #3a404d, #181c26); */
+    background: -webkit-linear-gradient(top bottom, rgb(250, 250, 250), rgb(191, 220, 217));
+    background: linear-gradient(to bottom, rgb(250, 250, 250), rgb(191, 220, 217));
+    /* background: -webkit-linear-gradient(top, #dd8109, #dd8109);
+    background: linear-gradient(to bottom, #57dd18, #57dd18); */
+}
+
+.priceItemCell:hover {
+    z-index: 2;
+    overflow: visible;
+}
+
+.priceItemCell:hover::after {
+    opacity: 1;
+    -webkit-transform: scaleX(1.06) scaleY(1.03);
+    transform: scaleX(1.06) scaleY(1.03);
+}
+
+.no-margin {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.font-color {
+    color: rgb(161, 99, 136) !important
+}
+
+.integralDesc {
+    display: inline-block;
+    width: 100%;
+    height: 55rpx;
+    text-align: left;
+    margin-left: 50rpx;
+    font-size: 14px;
+    color: rgb(144, 69, 117)
+}
+
+.integralDate {
+    display: inline-block;
+    width: 100%;
+    height: 45rpx;
+    text-align: left;
+    margin-left: 50rpx;
+    font-size: 12px;
+    color: rgb(145, 85, 123)
+}
+
+.showIntegral {
+    display: inline-block;
+    width: 100%;
+    font-size: 21px !important;
+    position: relative;
+    top: -20rpx;
+    left: 40rpx;
+    font-size: 16px;
+}
+
+.integralMy {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.integralMy label {
+    display: inline-block;
+    position: relative;
+    top: -80rpx;
+    font-size: 8px !important;
+    color: rgb(197, 194, 16);
+}

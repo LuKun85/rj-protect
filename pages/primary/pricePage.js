@@ -39,6 +39,18 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function() {
+        var that = this;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        if (todayMonth < 10) {
+            todayMonth = '0' + todayMonth;
+        }
+        var todayDay = today.getDate() < 10 ? '0' + today.getDate() : today.getDate();
+        var todayDate = todayYear + '-' + todayMonth + '-' + todayDay;
+        that.setData({
+            nowDate: todayDate
+        })
 
     },
 
@@ -205,7 +217,10 @@ Page({
             wx.hideLoading();
         });
 
-    }
+    },
+
+
+
 
 
 

@@ -635,6 +635,10 @@ Page({
         });
     },
 
-
+     goMyIntegralDetailPage: function(e) {
+        wx.navigateTo({
+            url: `/pages/primary/integralDetail?myIntegral=${this.data.memberInfo.memberIntegarl}`,
+        })
+    },
 
 })

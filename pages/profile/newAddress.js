@@ -166,8 +166,8 @@ Page({
         }
 
         this.setData({
-            previewSelectItem: [9999, 1, 1, 1],
-            houseParkPreviewSelectItem: [9999, 1, 1, 1]
+            previewSelectItem: [0, 0, 0, 0],
+            houseParkPreviewSelectItem: [0, 0, 0, 0]
         })
 
 
@@ -414,7 +414,8 @@ Page({
                 break;
         }
 
-        console.info("queryUpAddressCode=", queryUpAddressCode);
+
+
         if (queryUpAddressCode == null || queryUpAddressCode == '' || queryUpAddressCode == undefined) {
             return;
         }
@@ -422,6 +423,19 @@ Page({
             return;
         }
 
+        this.setData({
+            buildingList: [],
+            unitList: [],
+            doorList: [],
+            buildingCode: '',
+            buildingName: '',
+            unitCode: '',
+            unitName: '',
+            doorCode: '',
+            doorName: '',
+            houseparkCode: '',
+            houseparkName: ''
+        });
 
         var params = {
             "instId": config.config.instId,

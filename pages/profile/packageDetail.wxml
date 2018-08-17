@@ -48,7 +48,7 @@
        		{{goodsPrice}}元
        	</view>
        	<view class="amount">
-       		{{goodsWeight}}公斤
+       		{{goodsWeight}}市斤
        	</view>
        	<view class="total">
        		{{goodsAmount}}元

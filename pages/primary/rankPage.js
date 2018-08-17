@@ -29,8 +29,14 @@ Page({
         currentTab: '0',
         memberInfo: {},
         mymemberId: '123131',
+        mymemberIdTest: '000000000152',
 
-        toMemberRankItem: '#'
+        toMemberRankItem: '#',
+
+        pageSize: 10,
+        pageCurrent: 1,
+        pageNo: 0,
+        scrollWeightQuarterHeight: 1000
     },
 
 
@@ -95,7 +101,9 @@ Page({
             if ('000000' == res.respCode) {
                 console.info("res", res)
                 this.setData({
-                    rankDataList: res.responseBody.queryResultPage != null && res.responseBody.queryResultPage.list != null ? res.responseBody.queryResultPage.list : []
+                    rankDataList: res.responseBody.queryResultPage != null && res.responseBody.queryResultPage.list != null ? res.responseBody.queryResultPage.list : [],
+                    pageCurrent: res.responseBody.queryResultPage.nextPage,
+                    pageNo: res.responseBody.queryResultPage.pageNo
                 })
             } else {
                 wx.showToast({
@@ -179,7 +187,9 @@ Page({
             if ('000000' == res.respCode) {
                 console.info("res", res)
                 this.setData({
-                    rankDataList: res.responseBody.queryResultPage != null && res.responseBody.queryResultPage.list != null ? res.responseBody.queryResultPage.list : []
+                    rankDataList: res.responseBody.queryResultPage != null && res.responseBody.queryResultPage.list != null ? res.responseBody.queryResultPage.list : [],
+                    pageCurrent: res.responseBody.queryResultPage.nextPage,
+                    pageNo: res.responseBody.queryResultPage.pageNo
                 })
             } else {
                 wx.showToast({
@@ -222,7 +232,9 @@ Page({
             if ('000000' == res.respCode) {
                 console.info("res", res)
                 this.setData({
-                    rankDataList: res.responseBody.queryResultPage != null && res.responseBody.queryResultPage.list != null ? res.responseBody.queryResultPage.list : []
+                    rankDataList: res.responseBody.queryResultPage != null && res.responseBody.queryResultPage.list != null ? res.responseBody.queryResultPage.list : [],
+                    pageCurrent: res.responseBody.queryResultPage.nextPage,
+                    pageNo: res.responseBody.queryResultPage.pageNo
                 })
             } else {
                 wx.showToast({
@@ -248,12 +260,147 @@ Page({
 
     goToMyRankLocation: function(e) {
         console.info("跳转排行信息e=", e)
+        //获取全部排行信息
+        var that = this;
+        if (that.data.pageCurrent < 0) {
+            return;
+        }
 
-        var i = 'P000000000015';
-        this.setData({
-            toMemberRankItem: i
+        wx.showLoading({
+            title: '请等待..',
+            mask: true
         })
 
+        // that.setData({
+        //     rankDataList: [],
+        //     pageCurrent: 0,
+        //     pageNo: 0,
+        //     toMemberRankItem: ''
+        // })
+
+        var rankDataType = 'Q';
+        if(that.data.currentTab == '1'){
+            rankDataType = 'A'; 
+        }
+
+        var params = {
+            "instId": config.config.instId,
+            "platformType": config.config.platformType,
+            "rankDataType": rankDataType,
+            "pageSize": 1000,
+            "pageCurrent": 0,
+            "rankDataAll": 'Y'
+        };
+        server.GET(server.api.getRankData, params).then(res => {
+            if ('000000' == res.respCode) {
+                // that.setData({
+                //     rankDataList: [],
+                //     pageCurrent: 0,
+                //     pageNo: 0,
+                //     toMemberRankItem: ''
+                // })
+                // var newList = that.data.rankDataList.concat(res.responseBody.queryResultPage.list)
+                var newList = res.responseBody.queryResultPage.list;
+                var i = 'P' + that.data.mymemberId;
+                that.setData({
+                    rankDataList: newList,
+                    pageCurrent: -1,
+                    pageNo: res.responseBody.queryResultPage.pageNo,
+                    toMemberRankItem: i
+                })
+            } else {
+                wx.showToast({
+                    title: res.respMsg,
+                    icon: 'none',
+                    duration: 2000
+                })
+            }
+            wx.hideLoading();
+        }).catch(res => {
+            console.info("获取排行榜数据异常=", res)
+            wx.hideLoading();
+        });
+
+    },
+
+    getMoreQuarterRankData: function(e) {
+        var that = this;
+        if (that.data.pageCurrent < 0) {
+            return;
+        }
+
+        wx.showLoading({
+            title: '加载中',
+            mask: true
+        })
+
+        var params = {
+            "instId": config.config.instId,
+            "platformType": config.config.platformType,
+            "rankDataType": "Q",
+            "pageSize": that.data.pageSize,
+            "pageCurrent": that.data.pageCurrent
+        };
+        server.GET(server.api.getRankData, params).then(res => {
+            if ('000000' == res.respCode) {
+                var newList = that.data.rankDataList.concat(res.responseBody.queryResultPage.list)
+                this.setData({
+                    rankDataList: newList,
+                    pageCurrent: res.responseBody.queryResultPage.nextPage,
+                    pageNo: res.responseBody.queryResultPage.pageNo
+                })
+            } else {
+                wx.showToast({
+                    title: res.respMsg,
+                    icon: 'none',
+                    duration: 2000
+                })
+            }
+            wx.hideLoading();
+        }).catch(res => {
+            console.info("获取季度排行榜数据异常=", res)
+            wx.hideLoading();
+        });
+    } ,
+
+    getMoreAnualRankData: function(e) {
+        var that = this;
+        if (that.data.pageCurrent < 0) {
+            return;
+        }
+
+        wx.showLoading({
+            title: '加载中',
+            mask: true
+        })
+
+        var params = {
+            "instId": config.config.instId,
+            "platformType": config.config.platformType,
+            "rankDataType": "A",
+            "pageSize": that.data.pageSize,
+            "pageCurrent": that.data.pageCurrent
+        };
+        server.GET(server.api.getRankData, params).then(res => {
+            if ('000000' == res.respCode) {
+                var newList = that.data.rankDataList.concat(res.responseBody.queryResultPage.list)
+                this.setData({
+                    rankDataList: newList,
+                    pageCurrent: res.responseBody.queryResultPage.nextPage,
+                    pageNo: res.responseBody.queryResultPage.pageNo
+                })
+            } else {
+                wx.showToast({
+                    title: res.respMsg,
+                    icon: 'none',
+                    duration: 2000
+                })
+            }
+            wx.hideLoading();
+        }).catch(res => {
+            console.info("获取年度排行榜数据异常=", res)
+            wx.hideLoading();
+        });
     }
 
 
